@@ -71,126 +71,7 @@ One of the form buttons in the migration UI has a label that does not accurately
 
 ## Code Issues
 
-### [C1] Missing timeouts and retry logic on HTTP calls
-
-**Severity**: Medium
-
-**Location**: `problems/polygon_api.py::_make_request` — uses `requests.post(...)` without `timeout` or retry handling.
-
-**Description**:
-The code makes network requests to Polygon (and in other places) without specifying timeouts or retry/backoff. Long or hung requests can block workers and degrade service.
-
-**Impact**:
-
-**Suggested Fix**:
-
----
-### [C2] Dynamic imports and `sys.path.append('.')` usage
-
-**Severity**: Medium
-
-**Location**: `problems/polygon_api.py` (multiple functions append to `sys.path` and import `problems.AzureTestcase` dynamically).
-
-**Description**:
-The code appends `.` to `sys.path` and imports `AzureTestcase` inside functions. This pattern is fragile, can hide import errors, and defeats static analysis.
-
-**Impact**:
-- Harder to reason about dependencies and import-time failures.
-- Potential for inconsistent module resolution in different environments.
-
-**Suggested Fix**:
-- Import `AzureTestcase` at module top-level (or use Django's `apps.get_model` pattern if truly dynamic).
-- Remove `sys.path.append('.')` and fix PYTHONPATH via proper packaging or Django settings.
----
-
-### [C3] Broad exception handling and inconsistent error propagation
-
-**Severity**: Medium
-
-**Location**: Multiple files, e.g., `problems/polygon_api.py` and `problems/views.py`.
-
-**Description**:
-The code often catches generic `Exception` and returns empty defaults or swallows details (e.g., returning `[]` for failures to fetch tests). While this prevents crashes, it makes debugging and error recovery harder.
-
-**Impact**:
-- Real errors may be masked; callers may proceed with invalid data.
-- Harder to surface meaningful errors to users or logs.
-
-**Suggested Fix**:
-- Catch specific exceptions where possible and propagate meaningful errors. Add structured logging with exception info. Use helper exceptions for expected failure modes.
-
----
-
-### [C4] Hard-coded two-digit zero padding for test blob names
-
-**Severity**: Low
-
-**Location**: `problems/AzureTestcase.py` and `problems/polygon_api.py` — uses `f"{test_number:02d}"` when naming blobs.
-
-**Description**:
-Two-digit zero padding (`02d`) will cause naming collisions or inconsistent ordering for problems with >= 100 tests.
-
-**Impact**:
-- Problems with >=100 tests will have ambiguous blob names and could overwrite earlier blobs.
-
-**Suggested Fix**:
-- Use dynamic padding width (e.g., compute width based on test count: `width = len(str(total_tests))` and format accordingly) or use fixed wider padding (e.g., 04d).
-
----
-
-### [C5] Unused imports and minor code quality issues
-
-**Severity**: Low
-
-**Location**: e.g., `problems/views.py` (`from bs4 import BeautifulSoup`, `from django.core.cache import cache`) and other modules.
-
-**Description**:
-There are a few imports that are unused; also some logging messages and comments could be tightened.
-
-**Impact**:
-- Reduced code clarity and slightly larger memory footprint.
-
-**Suggested Fix**:
-- Run a linter (e.g., `ruff`, `flake8`) and fix/clean unused imports and style issues.
-
----
-
-### [C6] Redis key-prefix mismatch prevents cache invalidation
-
-**Severity**: High
-
-**Location**: `problems/polygon_api.py` — `store_test_cases_in_redis` vs `delete_problem_test_case_cache`
-
-**Description**:
-The code stores test cases using the prefix `polygon_migration_test_cases_{polygon_id}` (`store_test_cases_in_redis`) but `delete_problem_test_case_cache` removes keys matching `oj_dev_with_redis_storage_test_cases_{db_problem_id}*`. These two prefixes do not match and therefore clearing cache may be ineffective.
-
-**Impact**:
-- Cached test cases may remain stale and cause inconsistent migrations or upload of outdated data to Azure.
-- `delete_problem_test_case_cache` will likely not remove the cached keys created by `store_test_cases_in_redis`.
-
-**Suggested Fix**:
-- Normalize the Redis prefix to a single constant (e.g., `POLY_TESTCASE_PREFIX`) and use it across all functions.
-- Add unit tests asserting caching keys are created and removed.
----
-
-### [C7] Non-standard requirements file name
-
-**Severity**: Low
-
-**Location**: Repository root — `requirement.txt` (singular) noted in README and used by docs.
-
-**Description**:
-The repository uses `requirement.txt` rather than the conventional `requirements.txt`. This can confuse developers and automation tools that expect the plural name.
-
-**Impact**:
-- Minor tooling friction (CI, onboarding scripts) if scripts assume `requirements.txt`.
-
-**Suggested Fix**:
-- Rename to `requirements.txt` or add instructions/aliases so tooling is aware of the file name.
-
----
-
-### [C8] Missing / Out-of-sync migrations causing Runtime DB errors
+### [C1] Missing / Out-of-sync migrations causing Runtime DB errors
 
 **Severity**: Critical
 
@@ -210,6 +91,124 @@ The codebase contains model changes (for example, `Problem.notes` was added to `
 
 ---
 
+### [C2] Redis key-prefix mismatch prevents cache invalidation
+
+**Severity**: High
+
+**Location**: `problems/polygon_api.py` — `store_test_cases_in_redis` vs `delete_problem_test_case_cache`
+
+**Description**:
+The code stores test cases using the prefix `polygon_migration_test_cases_{polygon_id}` (`store_test_cases_in_redis`) but `delete_problem_test_case_cache` removes keys matching `oj_dev_with_redis_storage_test_cases_{db_problem_id}*`. These two prefixes do not match and therefore clearing cache may be ineffective.
+
+**Impact**:
+- Cached test cases may remain stale and cause inconsistent migrations or upload of outdated data to Azure.
+- `delete_problem_test_case_cache` will likely not remove the cached keys created by `store_test_cases_in_redis`.
+
+**Suggested Fix**:
+- Normalize the Redis prefix to a single constant (e.g., `POLY_TESTCASE_PREFIX`) and use it across all functions.
+- Add unit tests asserting caching keys are created and removed.
+---
+
+### [C3] Missing timeouts and retry logic on HTTP calls
+
+**Severity**: Medium
+
+**Location**: `problems/polygon_api.py::_make_request` — uses `requests.post(...)` without `timeout` or retry handling.
+
+**Description**:
+The code makes network requests to Polygon (and in other places) without specifying timeouts or retry/backoff. Long or hung requests can block workers and degrade service.
+
+**Impact**:
+
+**Suggested Fix**:
+
+---
+### [C4] Dynamic imports and `sys.path.append('.')` usage
+
+**Severity**: Medium
+
+**Location**: `problems/polygon_api.py` (multiple functions append to `sys.path` and import `problems.AzureTestcase` dynamically).
+
+**Description**:
+The code appends `.` to `sys.path` and imports `AzureTestcase` inside functions. This pattern is fragile, can hide import errors, and defeats static analysis.
+
+**Impact**:
+- Harder to reason about dependencies and import-time failures.
+- Potential for inconsistent module resolution in different environments.
+
+**Suggested Fix**:
+- Import `AzureTestcase` at module top-level (or use Django's `apps.get_model` pattern if truly dynamic).
+- Remove `sys.path.append('.')` and fix PYTHONPATH via proper packaging or Django settings.
+---
+
+### [C5] Broad exception handling and inconsistent error propagation
+
+**Severity**: Medium
+
+**Location**: Multiple files, e.g., `problems/polygon_api.py` and `problems/views.py`.
+
+**Description**:
+The code often catches generic `Exception` and returns empty defaults or swallows details (e.g., returning `[]` for failures to fetch tests). While this prevents crashes, it makes debugging and error recovery harder.
+
+**Impact**:
+- Real errors may be masked; callers may proceed with invalid data.
+- Harder to surface meaningful errors to users or logs.
+
+**Suggested Fix**:
+- Catch specific exceptions where possible and propagate meaningful errors. Add structured logging with exception info. Use helper exceptions for expected failure modes.
+
+---
+
+### [C6] Hard-coded two-digit zero padding for test blob names
+
+**Severity**: Low
+
+**Location**: `problems/AzureTestcase.py` and `problems/polygon_api.py` — uses `f"{test_number:02d}"` when naming blobs.
+
+**Description**:
+Two-digit zero padding (`02d`) will cause naming collisions or inconsistent ordering for problems with >= 100 tests.
+
+**Impact**:
+- Problems with >=100 tests will have ambiguous blob names and could overwrite earlier blobs.
+
+**Suggested Fix**:
+- Use dynamic padding width (e.g., compute width based on test count: `width = len(str(total_tests))` and format accordingly) or use fixed wider padding (e.g., 04d).
+
+---
+
+### [C7] Unused imports and minor code quality issues
+
+**Severity**: Low
+
+**Location**: e.g., `problems/views.py` (`from bs4 import BeautifulSoup`, `from django.core.cache import cache`) and other modules.
+
+**Description**:
+There are a few imports that are unused; also some logging messages and comments could be tightened.
+
+**Impact**:
+- Reduced code clarity and slightly larger memory footprint.
+
+**Suggested Fix**:
+- Run a linter (e.g., `ruff`, `flake8`) and fix/clean unused imports and style issues.
+
+---
+
+### [C8] Non-standard requirements file name
+
+**Severity**: Low
+
+**Location**: Repository root — `requirement.txt` (singular) noted in README and used by docs.
+
+**Description**:
+The repository uses `requirement.txt` rather than the conventional `requirements.txt`. This can confuse developers and automation tools that expect the plural name.
+
+**Impact**:
+- Minor tooling friction (CI, onboarding scripts) if scripts assume `requirements.txt`.
+
+**Suggested Fix**:
+- Rename to `requirements.txt` or add instructions/aliases so tooling is aware of the file name.
+
+---
 
 ## Edge Case Analysis
 
