@@ -217,9 +217,18 @@ Below are the primary Django models used by the migration app. Table names follo
   - `discord_id` (unique, nullable)
 - Constraints: `email` and `username` are unique. Custom user manager `UserManager` handles creation.
 
-### 3.6 Other models (contents app)
-- `contents.Topic` is referenced by `User.on_going_topic`; see `contents/models.py` for details if you need to document topics.
+### 3.6. Relationships
 
+This section describes how the primary data models relate to each other and what cascade behaviors to expect.
+
+- Problem <-> ProblemTag: Many-to-Many
+  - `Problem.extra_tags` is a `ManyToManyField` to `ProblemTag` (related_name `problems`). Tags are stored in `problems_problemtag` and associated via the implicit M2M join table. Deleting a `Problem` does not delete `ProblemTag` rows; removing a tag from a problem only updates the join table.
+
+- Problem -> SampleTestCase: One-to-Many (ForeignKey)
+  - `SampleTestCase.problem` is a `ForeignKey` to `Problem` with `on_delete=models.CASCADE`. Deleting a `Problem` will remove its sample test cases. Sample tests are ordered by `order` and intended for display in the statement.
+
+- Problem -> ProblemTestCase: One-to-Many (ForeignKey)
+  - `ProblemTestCase.problem` is a `ForeignKey` to `Problem` with `on_delete=models.CASCADE`. Regular testcases are similarly deleted when their `Problem` is removed. The view code updates/creates testcases by position; it does not currently delete trailing cases when a problem's test set shrinks.
 ---
 
 ## 4. Redis and Cloud naming conventions
@@ -227,7 +236,6 @@ Below are the primary Django models used by the migration app. Table names follo
 - Redis keys used by this app:
   - `polygon_migration_test_cases_{polygon_id}_count` — stores the number of test cases (setex with expiry default 0.5 hours).
   - `polygon_migration_test_cases_{polygon_id}_test_{i}` — stores JSON payloads for each test case.
-- Note: There is also a legacy/alternate key prefix referenced in `PolygonAPI.delete_problem_test_case_cache`: `oj_dev_with_redis_storage_test_cases_{db_problem_id}*`. This mismatch is a potential gotcha.
 
 - Azure Blob naming conventions (in `problems/AzureTestcase.py` and `polygon_api.py`):
   - Test case inputs: `test_cases/{db_problem_id}/{NN}`
@@ -237,20 +245,41 @@ Below are the primary Django models used by the migration app. Table names follo
 
 ---
 
-## 5. Notes, gotchas and troubleshooting
+  ## 5. External integrations (Polygon API deep dive)
 
-- settings.py requires `POLYGON_API_KEY` and `POLYGON_API_SECRET` in `.env`. Startup raises if missing — for local testing set dummy values.
-- Requirements filename is `requirement.txt` (singular) — CI and bootstrap scripts must use that name.
-- Custom checker compilation requires `g++` available on PATH. `CUSTOM_CHECKER_DIR` env var can be used to persist compiled binaries; otherwise the code uses temporary directories.
-- Redis prefix mismatch: storing uses `polygon_migration_test_cases_{polygon_id}` while `delete_problem_test_case_cache` uses `oj_dev_with_redis_storage_test_cases_{db_problem_id}` — this can leave stale caches or fail to clear cached test cases when expected. Consider normalizing these prefixes.
-- `download_and_extract_package` expects a ZIP response from Polygon (starts with `PK`); if API returns an error page, the function raises.
-- When modifying models (e.g., adding fields like `notes`) ensure migrations are created/applied (`makemigrations`, `migrate`). Missing migrations cause `UndefinedColumn` DB errors (see earlier stack traces).
+  This section provides an expanded explanation of how the application interacts with the Polygon API, the exact endpoints used, and implementation details important for maintainers.
 
-If you want, I can:
-- Generate a diagram of the flow (sequence diagram) or ER diagram for models.
-- Add a short `docs/CONTRIBUTING.md` with setup commands and common troubleshooting steps.
-- Normalize Redis key prefixes and add unit tests for the Polygon API wrapper using `responses` or `requests-mock`.
+  Authentication and apiSig generation
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
----
+  - Credentials: the application reads `POLYGON_API_KEY` and `POLYGON_API_SECRET` from environment (the project's `.env` is loaded by `settings.py`).
+  - Signature flow (see `problems/polygon_api.py::_generate_api_sig`):
+    1. Add `apiKey` and `time` (current UNIX timestamp) to the request parameters.
+    2. Sort parameters lexicographically by key and build a query string with `urlencode`.
+    3. Generate a 6-character random prefix (lowercase letters and digits).
+    4. Build the string: `{rand_prefix}/{method_name}?{param_str}#{api_secret}`.
+    5. Compute SHA-512 hex digest of that string and prepend the 6-character prefix to the digest to form `apiSig`.
+    6. Send `apiKey`, `apiSig`, and `time` in the POST body (form-encoded) along with other API parameters.
 
-End of document.
+  Implementation notes:
+  - All requests use HTTP POST to `https://polygon.codeforces.com/api/{method_name}`.
+  - The code provides two helpers:
+    - `_make_request(method_name, params, expect_json=True)` — posts form data and, if `expect_json`, parses JSON and raises on `status == 'FAILED'`.
+    - `_make_plain_request(method_name, params)` — returns raw text (used for binary or plain text endpoints such as `problem.package` or `problem.testInput`).
+  - The `download_and_extract_package` function downloads binary ZIP via `problem.package` and validates the response starts with the ZIP signature `PK` before writing and extracting.
+
+  Endpoints used (detailed)
+  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+  - `problem.info` — Returns problem metadata (name, timeLimit, memoryLimit, problem tags, etc.). Used to populate `Problem` fields like `time_limit` and `memory_limit`.
+  - `problem.packages` — Lists package revisions and types for a problem. The code selects the latest package with the requested `type` (usually `standard`).
+  - `problem.package` — Downloads the package zip by `packageId` and `problemId`. Response is binary ZIP containing `problem.html` and resources. The implementation checks for `PK` signature and extracts `problem.html` for parsing.
+  - `problem.statements` — Fetches localized statements; the code may use `problem.html` instead for robust parsing of legend/input/output sections.
+  - `problem.tests` — Returns a list of tests (indexes, metadata like `manual`, `useInStatements`). The typical flow uses this to enumerate tests.
+  - `problem.testInput` and `problem.testAnswer` — Given `problemId`, `testset`, and `testIndex` return the raw input and output for an individual test. These are fetched via `_make_plain_request`.
+  - `problem.files` — Lists problem files, used to discover resource/source/checker files when needed.
+  - `problem.viewFile` — Retrieves content of a named file (used for fetching custom checker source files or other resources). The fetcher tries `type='source'` then `type='resource'`, and appends `.cpp` as a fallback when appropriate.
+  - `problem.checker` — Returns checker identification (can be `std::<name>` for standard checkers or a filename for a custom checker). The code treats responses not starting with `std::` as custom checkers.
+  - `problem.solutions` and `problem.viewSolution` — Used to list available solutions and fetch the main solution source (the code looks for a solution with tag `MA` or falls back to the first solution).
+  - `problem.script` — Test generation script (optional); the code attempts to fetch it but tolerates absence.
+  - `problem.updateWorkingCopy` — Used in some code paths to ensure the working copy is up-to-date before enumerating solutions.

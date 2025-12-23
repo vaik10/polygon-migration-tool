@@ -6,34 +6,14 @@ This file was generated from `ISSUES_TEMPLATE.md` and contains issues discovered
 
 | Type | Critical | High | Medium | Low | Total |
 |------|----------|------|--------|-----|-------|
-| Product Issues | 1 | 2 | 0 | 1 | 4 |
-| Code Issues | 0 | 2 | 2 | 3 | 7 |
+| Product Issues | 0 | 2 | 0 | 1 | 3 |
+| Code Issues | 1 | 1 | 3 | 3 | 8 |
 
 ---
 
 ## Product Issues
 
-### [P1] Missing / Out-of-sync migrations causing Runtime DB errors
-
-**Severity**: Critical
-
-**Location**: Runtime (views.py triggers ORM queries) — e.g. `problems/views.py: line ~145` when calling `Problem.objects.filter(...)`
-
-**Description**:
-The codebase contains model changes (for example, `Problem.notes` was added to `problems.models.Problem`) but the database schema may not always be migrated. This causes `django.db.utils.ProgrammingError: column problems_problem.notes does not exist` when the ORM tries to SELECT that field.
-
-**Impact**:
-- Application crashes at runtime (500) on pages that query the updated model.
-- Blocks normal operation of migration UI.
-
-**Suggested Fix**:
-- Ensure all model changes are committed with migrations checked into the repository.
-- Run `python manage.py makemigrations` and `python manage.py migrate` in deployment scripts/CI where appropriate.
-- Add a developer checklist / CI job that validates migrations are up-to-date (e.g., `python manage.py makemigrations --check`).
-
----
-
-### [P2] Long-running external I/O inside DB transaction block
+### [P1] Long-running external I/O inside DB transaction block
 
 **Severity**: High
 
@@ -52,7 +32,7 @@ The view performs network I/O (Polygon API calls, Azure uploads, compilation of 
 
 ---
 
-### [P3] Test case truncation when saving to DB
+### [P2] Test case truncation when saving to DB
 
 **Severity**: High
 
@@ -71,7 +51,7 @@ When migrating test cases to the database the code truncates `input` and `output
 
 ---
 
-### [P4] Mismatched button label vs action in migration UI
+### [P3] Mismatched button label vs action in migration UI
 
 **Severity**: Low
 
@@ -93,7 +73,7 @@ One of the form buttons in the migration UI has a label that does not accurately
 
 ### [C1] Missing timeouts and retry logic on HTTP calls
 
-**Severity**: High
+**Severity**: Medium
 
 **Location**: `problems/polygon_api.py::_make_request` — uses `requests.post(...)` without `timeout` or retry handling.
 
@@ -209,6 +189,27 @@ The repository uses `requirement.txt` rather than the conventional `requirements
 - Rename to `requirements.txt` or add instructions/aliases so tooling is aware of the file name.
 
 ---
+
+### [C8] Missing / Out-of-sync migrations causing Runtime DB errors
+
+**Severity**: Critical
+
+**Location**: Runtime (views.py triggers ORM queries) — e.g. `problems/views.py: line ~145` when calling `Problem.objects.filter(...)`
+
+**Description**:
+The codebase contains model changes (for example, `Problem.notes` was added to `problems.models.Problem`) but the database schema may not always be migrated. This causes `django.db.utils.ProgrammingError: column problems_problem.notes does not exist` when the ORM tries to SELECT that field.
+
+**Impact**:
+- Application crashes at runtime (500) on pages that query the updated model.
+- Blocks normal operation of migration UI.
+
+**Suggested Fix**:
+- Ensure all model changes are committed with migrations checked into the repository.
+- Run `python manage.py makemigrations` and `python manage.py migrate` in deployment scripts/CI where appropriate.
+- Add a developer checklist / CI job that validates migrations are up-to-date (e.g., `python manage.py makemigrations --check`).
+
+---
+
 
 ## Edge Case Analysis
 
