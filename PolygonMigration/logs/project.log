@@ -2650,3 +2650,930 @@ compilation terminated.
 [INFO] 2025-12-23 15:06:16,667 polygon_api | Fetching test cases for 497346, testset
 [DEBUG] 2025-12-23 15:06:16,938 views | test_case_count=13
 [INFO] 2025-12-23 15:06:16,939 views | Exiting index view
+[INFO] 2025-12-23 17:50:06,004 views | Entered index view with method=POST
+[DEBUG] 2025-12-23 17:50:06,007 views | POST data: polygon_id=497346, migrate_to_azure=None, migrate_to_db=1, migrate_test_cases_to_db=None, difficulty=easy, selected_tags=['math', '< 800'], new_tag=
+[DEBUG] 2025-12-23 17:50:06,007 views | All POST data: {'csrfmiddlewaretoken': ['9jybnyRWy7C6tqYHovGFMIYpFyBwfMiy7CZjz4q2MPwcG4aLBaHZouEZPinmb2kN'], 'problem_id': ['497346'], 'migrate_to_db': ['1'], 'difficulty': ['easy'], 'tags': ['math', '< 800']}
+[INFO] 2025-12-23 17:50:06,007 views | Processing polygon_id=497346
+[DEBUG] 2025-12-23 17:50:06,012 views | db_problem=Multiply two nums
+[DEBUG] 2025-12-23 17:50:09,206 views | Updated working copy: None
+[DEBUG] 2025-12-23 17:50:13,919 views | Fetched solutions: [{'name': 'solution.cpp', 'modificationTimeSeconds': 1766401304, 'length': 273, 'tag': 'MA', 'sourceType': 'cpp.g++14'}]
+[INFO] 2025-12-23 17:50:16,992 polygon_api | Fetching problem info for 497346
+[INFO] 2025-12-23 17:50:18,220 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[DEBUG] 2025-12-23 17:50:18,221 views | Polygon problem info: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 17:50:18,221 polygon_api | Downloading package for problem 497346
+[INFO] 2025-12-23 17:50:18,221 polygon_api | Fetching problem info for 497346
+[INFO] 2025-12-23 17:50:32,967 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 17:53:21,826 views | Entered index view with method=POST
+[DEBUG] 2025-12-23 17:53:21,828 views | POST data: polygon_id=497346, migrate_to_azure=None, migrate_to_db=1, migrate_test_cases_to_db=None, difficulty=easy, selected_tags=['math', '< 800'], new_tag=
+[DEBUG] 2025-12-23 17:53:21,829 views | All POST data: {'csrfmiddlewaretoken': ['9jybnyRWy7C6tqYHovGFMIYpFyBwfMiy7CZjz4q2MPwcG4aLBaHZouEZPinmb2kN'], 'problem_id': ['497346'], 'migrate_to_db': ['1'], 'difficulty': ['easy'], 'tags': ['math', '< 800']}
+[INFO] 2025-12-23 17:53:21,829 views | Processing polygon_id=497346
+[DEBUG] 2025-12-23 17:53:21,832 views | db_problem=Multiply two nums
+[DEBUG] 2025-12-23 17:53:23,263 views | Updated working copy: None
+[DEBUG] 2025-12-23 17:53:24,174 views | Fetched solutions: [{'name': 'solution.cpp', 'modificationTimeSeconds': 1766401304, 'length': 273, 'tag': 'MA', 'sourceType': 'cpp.g++14'}]
+[INFO] 2025-12-23 17:53:26,539 polygon_api | Fetching problem info for 497346
+[INFO] 2025-12-23 17:53:28,893 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[DEBUG] 2025-12-23 17:53:28,894 views | Polygon problem info: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 17:53:28,894 polygon_api | Downloading package for problem 497346
+[INFO] 2025-12-23 17:53:28,894 polygon_api | Fetching problem info for 497346
+[INFO] 2025-12-23 17:53:29,732 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 17:54:05,222 polygon_api | Successfully read problem.html content, length: 3972 characters
+[DEBUG] 2025-12-23 17:54:05,226 polygon_api | Cleaned up temporary directory: /tmp/tmp8fr_qtiw
+[DEBUG] 2025-12-23 17:54:05,226 views | Downloaded and extracted problem_html_content, length: 3972
+[INFO] 2025-12-23 17:54:05,226 views | Entered parse_problem_html with content length=3972
+[DEBUG] 2025-12-23 17:54:05,227 views | Extracted title=Multiply two nums, legend length=61, input_format length=548, output_format length=124
+[INFO] 2025-12-23 17:54:05,227 views | Exiting parse_problem_html
+[DEBUG] 2025-12-23 17:54:05,227 views | Parsed html_data: {'title': 'Multiply two nums', 'legend': '<p>Given two numbers multiply them and return the answer.</p>', 'input_format': '<p>The first line will contain the number of test cases <span class="tex-font-style-bf"><span class="tex-font-style-it">t</span></span>: 1 &lt;= t &lt;= 10. The next t lines will contain two integers <span class="tex-font-style-bf"><span class="tex-font-style-it">n</span></span> and <span class="tex-font-style-bf"><span class="tex-font-style-it">m</span></span>: 0 &lt;= <span class="tex-font-style-bf"><span class="tex-font-style-it">n</span></span>,<span class="tex-font-style-bf"><span class="tex-font-style-it">m</span></span> &lt;= 1000.</p>', 'output_format': '<p>Print t lines — one line for each test case. For each test case, print a single integer — product of the two numbers.</p>', 'notes': ''}
+[INFO] 2025-12-23 17:54:05,228 polygon_api | No test cases found in Redis for polygon_id 497346
+[WARNING] 2025-12-23 17:54:05,229 views | Test cases not found in Redis, fetching from Polygon
+[INFO] 2025-12-23 17:54:05,229 polygon_api | Fetching all test cases for 497346, testset
+[INFO] 2025-12-23 17:54:06,933 polygon_api | Found 13 test cases to process
+[INFO] 2025-12-23 17:54:06,934 polygon_api | Processing test case 1/13 (index: 1)
+[DEBUG] 2025-12-23 17:54:06,934 polygon_api | Fetching input for test case 1
+[DEBUG] 2025-12-23 17:54:08,621 polygon_api | Fetching output for test case 1
+[INFO] 2025-12-23 17:54:09,858 polygon_api | Successfully fetched test case 1 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 17:54:09,858 polygon_api | Processing test case 2/13 (index: 2)
+[DEBUG] 2025-12-23 17:54:09,858 polygon_api | Fetching input for test case 2
+[DEBUG] 2025-12-23 17:54:24,604 polygon_api | Fetching output for test case 2
+[INFO] 2025-12-23 17:54:25,884 polygon_api | Successfully fetched test case 2 - Input length: 20, Output length: 11
+[INFO] 2025-12-23 17:54:25,884 polygon_api | Processing test case 3/13 (index: 3)
+[DEBUG] 2025-12-23 17:54:25,884 polygon_api | Fetching input for test case 3
+[DEBUG] 2025-12-23 17:54:28,903 polygon_api | Fetching output for test case 3
+[INFO] 2025-12-23 17:54:29,928 polygon_api | Successfully fetched test case 3 - Input length: 38, Output length: 26
+[INFO] 2025-12-23 17:54:29,929 polygon_api | Processing test case 4/13 (index: 4)
+[DEBUG] 2025-12-23 17:54:29,929 polygon_api | Fetching input for test case 4
+[DEBUG] 2025-12-23 17:54:31,362 polygon_api | Fetching output for test case 4
+[INFO] 2025-12-23 17:54:32,194 polygon_api | Successfully fetched test case 4 - Input length: 73, Output length: 48
+[INFO] 2025-12-23 17:54:32,194 polygon_api | Processing test case 5/13 (index: 5)
+[DEBUG] 2025-12-23 17:54:32,194 polygon_api | Fetching input for test case 5
+[DEBUG] 2025-12-23 17:54:33,101 polygon_api | Fetching output for test case 5
+[INFO] 2025-12-23 17:54:34,639 polygon_api | Successfully fetched test case 5 - Input length: 52, Output length: 34
+[INFO] 2025-12-23 17:54:34,639 polygon_api | Processing test case 6/13 (index: 6)
+[DEBUG] 2025-12-23 17:54:34,639 polygon_api | Fetching input for test case 6
+[DEBUG] 2025-12-23 17:54:35,458 polygon_api | Fetching output for test case 6
+[INFO] 2025-12-23 17:54:36,191 polygon_api | Successfully fetched test case 6 - Input length: 76, Output length: 60
+[INFO] 2025-12-23 17:54:36,191 polygon_api | Processing test case 7/13 (index: 7)
+[DEBUG] 2025-12-23 17:54:36,191 polygon_api | Fetching input for test case 7
+[DEBUG] 2025-12-23 17:54:37,136 polygon_api | Fetching output for test case 7
+[INFO] 2025-12-23 17:54:37,688 polygon_api | Successfully fetched test case 7 - Input length: 51, Output length: 33
+[INFO] 2025-12-23 17:54:37,688 polygon_api | Processing test case 8/13 (index: 8)
+[DEBUG] 2025-12-23 17:54:37,688 polygon_api | Fetching input for test case 8
+[DEBUG] 2025-12-23 17:54:38,241 polygon_api | Fetching output for test case 8
+[INFO] 2025-12-23 17:54:38,879 polygon_api | Successfully fetched test case 8 - Input length: 20, Output length: 14
+[INFO] 2025-12-23 17:54:38,879 polygon_api | Processing test case 9/13 (index: 9)
+[DEBUG] 2025-12-23 17:54:38,879 polygon_api | Fetching input for test case 9
+[DEBUG] 2025-12-23 17:54:39,762 polygon_api | Fetching output for test case 9
+[INFO] 2025-12-23 17:54:40,783 polygon_api | Successfully fetched test case 9 - Input length: 45, Output length: 34
+[INFO] 2025-12-23 17:54:40,783 polygon_api | Processing test case 10/13 (index: 10)
+[DEBUG] 2025-12-23 17:54:40,783 polygon_api | Fetching input for test case 10
+[DEBUG] 2025-12-23 17:54:41,809 polygon_api | Fetching output for test case 10
+[INFO] 2025-12-23 17:54:42,966 polygon_api | Successfully fetched test case 10 - Input length: 35, Output length: 18
+[INFO] 2025-12-23 17:54:42,966 polygon_api | Processing test case 11/13 (index: 11)
+[DEBUG] 2025-12-23 17:54:42,966 polygon_api | Fetching input for test case 11
+[DEBUG] 2025-12-23 17:54:43,856 polygon_api | Fetching output for test case 11
+[INFO] 2025-12-23 17:54:44,689 polygon_api | Successfully fetched test case 11 - Input length: 56, Output length: 38
+[INFO] 2025-12-23 17:54:44,690 polygon_api | Processing test case 12/13 (index: 12)
+[DEBUG] 2025-12-23 17:54:44,690 polygon_api | Fetching input for test case 12
+[DEBUG] 2025-12-23 17:54:45,699 polygon_api | Fetching output for test case 12
+[INFO] 2025-12-23 17:54:46,723 polygon_api | Successfully fetched test case 12 - Input length: 32, Output length: 19
+[INFO] 2025-12-23 17:54:46,724 polygon_api | Processing test case 13/13 (index: 13)
+[DEBUG] 2025-12-23 17:54:46,724 polygon_api | Fetching input for test case 13
+[DEBUG] 2025-12-23 17:54:47,546 polygon_api | Fetching output for test case 13
+[INFO] 2025-12-23 17:54:48,566 polygon_api | Successfully fetched test case 13 - Input length: 18, Output length: 11
+[INFO] 2025-12-23 17:54:48,566 polygon_api | Completed fetching all 13 test cases for problem 497346
+[DEBUG] 2025-12-23 17:54:48,566 polygon_api | connecting to redis at address 127.0.0.1:6379 with password: 
+[INFO] 2025-12-23 17:54:48,570 polygon_api | Stored 13 test cases in Redis for polygon_id 497346
+[DEBUG] 2025-12-23 17:54:49,590 views | checker_type=checker.cpp
+[INFO] 2025-12-23 17:54:49,590 polygon_api | Fetching custom checker info for problem 497346
+[DEBUG] 2025-12-23 17:54:50,607 polygon_api | Raw checker info: checker.cpp
+[INFO] 2025-12-23 17:54:50,607 polygon_api | Custom checker detected: {'name': 'checker.cpp', 'type': 'custom'}
+[INFO] 2025-12-23 17:54:50,607 polygon_api | Fetching test cases for 497346, testset
+[DEBUG] 2025-12-23 17:54:51,434 views | test_case_count=13
+[INFO] 2025-12-23 17:54:51,434 views | Starting DB migration for polygon_id=497346
+[INFO] 2025-12-23 17:54:51,437 views | Updating existing Problem in DB
+[INFO] 2025-12-23 17:54:51,439 views | Processing tags for problem
+[DEBUG] 2025-12-23 17:54:51,439 views | Selected tags before processing: ['math', '< 800']
+[DEBUG] 2025-12-23 17:54:51,439 views | New tag before processing: 
+[DEBUG] 2025-12-23 17:54:51,440 views | Cleared existing tags for problem 1
+[DEBUG] 2025-12-23 17:54:51,440 views | Processing tag: math
+[DEBUG] 2025-12-23 17:54:51,442 views | Added existing tag: math
+[DEBUG] 2025-12-23 17:54:51,442 views | Processing tag: < 800
+[DEBUG] 2025-12-23 17:54:51,443 views | Added existing tag: < 800
+[DEBUG] 2025-12-23 17:54:51,445 views | Final tags after processing: ['math', '< 800']
+[INFO] 2025-12-23 17:54:51,448 polygon_api | Retrieved 13 test cases from Redis for polygon_id 497346
+[INFO] 2025-12-23 17:54:51,448 views | Retrieved test cases from Redis for test case migration to DB (saved Polygon API call)
+[DEBUG] 2025-12-23 17:54:51,448 views | test_cases for DB migration.
+[DEBUG] 2025-12-23 17:54:51,448 views | sample_tests: [{'index': 1, 'input': '1\r\n2 3\r\n', 'output': '6\r\n', 'description': '', 'is_sample': True}, {'index': 2, 'input': '3\r\n1 2\r\n0 2\r\n10 11\r\n', 'output': '2\r\n0\r\n110\r\n', 'description': '', 'is_sample': True}, {'index': 3, 'input': '5\r\n2 2\r\n100 100\r\n1000 1000\r\n0 0\r\n4 9\r\n', 'output': '4\r\n10000\r\n1000000\r\n0\r\n36\r\n', 'description': '', 'is_sample': True}]
+[DEBUG] 2025-12-23 17:54:51,451 views | Sample test idx=0, input_data=1
+2 3, output_data=6
+[DEBUG] 2025-12-23 17:54:51,452 views | Sample test idx=1, input_data=3
+1 2
+0 2
+10 11, output_data=2
+0
+110
+[DEBUG] 2025-12-23 17:54:51,453 views | Sample test idx=2, input_data=5
+2 2
+100 100
+1000 1000
+0 0
+4 9, output_data=4
+10000
+1000000
+0
+36
+[DEBUG] 2025-12-23 17:54:52,458 views | Fetched solutions: [{'name': 'solution.cpp', 'modificationTimeSeconds': 1766401304, 'length': 273, 'tag': 'MA', 'sourceType': 'cpp.g++14'}]
+[INFO] 2025-12-23 17:54:53,284 views | Exiting index view
+[INFO] 2025-12-23 18:00:21,773 views | Entered index view with method=POST
+[DEBUG] 2025-12-23 18:00:21,776 views | POST data: polygon_id=497346, migrate_to_azure=None, migrate_to_db=None, migrate_test_cases_to_db=1, difficulty=, selected_tags=[], new_tag=
+[DEBUG] 2025-12-23 18:00:21,776 views | All POST data: {'csrfmiddlewaretoken': ['IuHWowRjQUgatVck8Uum0VMmMLS9SQtJGN84A2qp4CagGzoolzvGCHsWWvEZO6vY'], 'problem_id': ['497346'], 'migrate_test_cases_to_db': ['1']}
+[INFO] 2025-12-23 18:00:21,776 views | Processing polygon_id=497346
+[DEBUG] 2025-12-23 18:00:21,780 views | db_problem=Multiply two nums
+[DEBUG] 2025-12-23 18:00:28,547 views | Updated working copy: None
+[DEBUG] 2025-12-23 18:00:30,185 views | Fetched solutions: [{'name': 'solution.cpp', 'modificationTimeSeconds': 1766401304, 'length': 273, 'tag': 'MA', 'sourceType': 'cpp.g++14'}]
+[INFO] 2025-12-23 18:00:31,823 polygon_api | Fetching problem info for 497346
+[INFO] 2025-12-23 18:00:32,950 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[DEBUG] 2025-12-23 18:00:32,951 views | Polygon problem info: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 18:00:32,951 polygon_api | Downloading package for problem 497346
+[INFO] 2025-12-23 18:00:32,951 polygon_api | Fetching problem info for 497346
+[INFO] 2025-12-23 18:00:33,701 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 18:01:22,927 polygon_api | Successfully read problem.html content, length: 3972 characters
+[DEBUG] 2025-12-23 18:01:22,932 polygon_api | Cleaned up temporary directory: /tmp/tmpusn9kx8r
+[DEBUG] 2025-12-23 18:01:22,933 views | Downloaded and extracted problem_html_content, length: 3972
+[INFO] 2025-12-23 18:01:22,933 views | Entered parse_problem_html with content length=3972
+[DEBUG] 2025-12-23 18:01:22,934 views | Extracted title=Multiply two nums, legend length=61, input_format length=548, output_format length=124
+[INFO] 2025-12-23 18:01:22,934 views | Exiting parse_problem_html
+[DEBUG] 2025-12-23 18:01:22,934 views | Parsed html_data: {'title': 'Multiply two nums', 'legend': '<p>Given two numbers multiply them and return the answer.</p>', 'input_format': '<p>The first line will contain the number of test cases <span class="tex-font-style-bf"><span class="tex-font-style-it">t</span></span>: 1 &lt;= t &lt;= 10. The next t lines will contain two integers <span class="tex-font-style-bf"><span class="tex-font-style-it">n</span></span> and <span class="tex-font-style-bf"><span class="tex-font-style-it">m</span></span>: 0 &lt;= <span class="tex-font-style-bf"><span class="tex-font-style-it">n</span></span>,<span class="tex-font-style-bf"><span class="tex-font-style-it">m</span></span> &lt;= 1000.</p>', 'output_format': '<p>Print t lines — one line for each test case. For each test case, print a single integer — product of the two numbers.</p>', 'notes': ''}
+[INFO] 2025-12-23 18:01:22,936 polygon_api | Retrieved 13 test cases from Redis for polygon_id 497346
+[INFO] 2025-12-23 18:01:22,936 views | Retrieved test cases from Redis for test case migration to DB (saved Polygon API call)
+[DEBUG] 2025-12-23 18:01:25,271 views | checker_type=checker.cpp
+[INFO] 2025-12-23 18:01:25,271 polygon_api | Fetching custom checker info for problem 497346
+[DEBUG] 2025-12-23 18:01:28,365 polygon_api | Raw checker info: checker.cpp
+[INFO] 2025-12-23 18:01:28,365 polygon_api | Custom checker detected: {'name': 'checker.cpp', 'type': 'custom'}
+[INFO] 2025-12-23 18:01:28,366 polygon_api | Fetching test cases for 497346, testset
+[DEBUG] 2025-12-23 18:01:31,013 views | test_case_count=13
+[INFO] 2025-12-23 18:01:31,018 polygon_api | Retrieved 13 test cases from Redis for polygon_id 497346
+[INFO] 2025-12-23 18:01:31,018 views | Retrieved test cases from Redis for test case migration to DB (saved Polygon API call)
+[DEBUG] 2025-12-23 18:01:31,018 views | test_cases for DB migration.
+[DEBUG] 2025-12-23 18:01:31,021 views | Test case idx=0, input_data=1
+2 3, output_data=6, is_sample=True, description=
+[DEBUG] 2025-12-23 18:01:31,021 views | Test case idx=0, truncated_input_length=6, truncated_output_length=1
+[DEBUG] 2025-12-23 18:01:31,022 views | Test case idx=1, input_data=3
+1 2
+0 2
+10 11, output_data=2
+0
+110, is_sample=True, description=
+[DEBUG] 2025-12-23 18:01:31,022 views | Test case idx=1, truncated_input_length=18, truncated_output_length=9
+[DEBUG] 2025-12-23 18:01:31,023 views | Test case idx=2, input_data=5
+2 2
+100 100
+1000 1000
+0 0
+4 9, output_data=4
+10000
+1000000
+0
+36, is_sample=True, description=
+[DEBUG] 2025-12-23 18:01:31,023 views | Test case idx=2, truncated_input_length=36, truncated_output_length=24
+[DEBUG] 2025-12-23 18:01:31,024 views | Test case idx=3, input_data=10
+0 0
+1 1
+2 3
+5 7
+10 0
+0 999
+123 456
+999 ..., output_data=0
+1
+6
+35
+0
+0
+56088
+999
+250000
+1000000, is_sample=False, description=
+[DEBUG] 2025-12-23 18:01:31,025 views | Test case idx=3, truncated_input_length=71, truncated_output_length=46
+[DEBUG] 2025-12-23 18:01:31,026 views | Test case idx=4, input_data=7
+12 34
+56 78
+90 1
+1 90
+25 25
+100 100
+999 0, output_data=408
+4368
+90
+90
+625
+10000
+0, is_sample=False, description=
+[DEBUG] 2025-12-23 18:01:31,026 views | Test case idx=4, truncated_input_length=50, truncated_output_length=32
+[DEBUG] 2025-12-23 18:01:31,027 views | Test case idx=5, input_data=10
+1 1000
+2 999
+3 998
+4 997
+5 996
+6 995
+7 9..., output_data=1000
+1998
+2994
+3988
+4980
+5970
+6958
+7944
+89..., is_sample=False, description=
+[DEBUG] 2025-12-23 18:01:31,027 views | Test case idx=5, truncated_input_length=74, truncated_output_length=58
+[DEBUG] 2025-12-23 18:01:31,028 views | Test case idx=6, input_data=8
+5 0
+0 5
+15 15
+20 3
+7 14
+9 8
+11 11
+12 12, output_data=0
+0
+225
+60
+98
+72
+121
+144, is_sample=False, description=
+[DEBUG] 2025-12-23 18:01:31,029 views | Test case idx=6, truncated_input_length=49, truncated_output_length=31
+[DEBUG] 2025-12-23 18:01:31,030 views | Test case idx=7, input_data=2
+999 999
+1000 1, output_data=998001
+1000, is_sample=False, description=
+[DEBUG] 2025-12-23 18:01:31,030 views | Test case idx=7, truncated_input_length=18, truncated_output_length=12
+[DEBUG] 2025-12-23 18:01:31,031 views | Test case idx=8, input_data=6
+13 37
+42 58
+91 17
+64 29
+88 11
+73 26, output_data=481
+2436
+1547
+1856
+968
+1898, is_sample=False, description=
+[DEBUG] 2025-12-23 18:01:31,032 views | Test case idx=8, truncated_input_length=43, truncated_output_length=32
+[DEBUG] 2025-12-23 18:01:31,033 views | Test case idx=9, input_data=4
+0 1000
+1000 0
+1000 1000
+0 0, output_data=0
+0
+1000000
+0, is_sample=False, description=
+[DEBUG] 2025-12-23 18:01:31,033 views | Test case idx=9, truncated_input_length=33, truncated_output_length=16
+[DEBUG] 2025-12-23 18:01:31,035 views | Test case idx=10, input_data=10
+1 1
+2 2
+3 3
+4 4
+5 5
+6 6
+7 7
+8 8
+9 9
+1..., output_data=1
+4
+9
+16
+25
+36
+49
+64
+81
+100, is_sample=False, description=
+[DEBUG] 2025-12-23 18:01:31,035 views | Test case idx=10, truncated_input_length=54, truncated_output_length=36
+[DEBUG] 2025-12-23 18:01:31,036 views | Test case idx=11, input_data=5
+0 10
+10 0
+7 8
+9 9
+2 100, output_data=0
+0
+56
+81
+200, is_sample=False, description=
+[DEBUG] 2025-12-23 18:01:31,036 views | Test case idx=11, truncated_input_length=30, truncated_output_length=17
+[DEBUG] 2025-12-23 18:01:31,037 views | Test case idx=12, input_data=3
+1 2
+3 4
+5 6, output_data=2
+12
+30, is_sample=False, description=
+[DEBUG] 2025-12-23 18:01:31,038 views | Test case idx=12, truncated_input_length=16, truncated_output_length=9
+[INFO] 2025-12-23 18:01:31,041 views | Exiting index view
+[INFO] 2025-12-23 18:14:11,180 views | Entered index view with method=POST
+[DEBUG] 2025-12-23 18:14:11,182 views | POST data: polygon_id=497346, migrate_to_azure=1, migrate_to_db=None, migrate_test_cases_to_db=None, difficulty=, selected_tags=[], new_tag=
+[DEBUG] 2025-12-23 18:14:11,183 views | All POST data: {'csrfmiddlewaretoken': ['LjY8C0J6GWcdcrOez3mY21R843ogcCKMJCpgOwicUE6jp50iMIniENxIeNa68SM1'], 'problem_id': ['497346'], 'migrate_to_azure': ['1']}
+[INFO] 2025-12-23 18:14:11,183 views | Processing polygon_id=497346
+[DEBUG] 2025-12-23 18:14:11,187 views | db_problem=Multiply two nums
+[DEBUG] 2025-12-23 18:14:13,058 views | Updated working copy: None
+[DEBUG] 2025-12-23 18:14:14,287 views | Fetched solutions: [{'name': 'solution.cpp', 'modificationTimeSeconds': 1766401304, 'length': 273, 'tag': 'MA', 'sourceType': 'cpp.g++14'}]
+[INFO] 2025-12-23 18:14:16,540 views | Azure migration triggered for polygon_id=497346
+[INFO] 2025-12-23 18:14:16,544 views | Problem found in DB, proceeding with Azure migration
+[INFO] 2025-12-23 18:14:16,544 views | Azure migration params: problem_id=1, container=polygon-migration
+[INFO] 2025-12-23 18:14:16,544 polygon_api | pattern oj_dev_with_redis_storage_test_cases_1*
+[INFO] 2025-12-23 18:14:16,547 polygon_api | Fetching custom checker info for problem 497346
+[INFO] 2025-12-23 18:15:15,019 views | Entered index view with method=POST
+[DEBUG] 2025-12-23 18:15:15,021 views | POST data: polygon_id=497346, migrate_to_azure=1, migrate_to_db=None, migrate_test_cases_to_db=None, difficulty=, selected_tags=[], new_tag=
+[DEBUG] 2025-12-23 18:15:15,022 views | All POST data: {'csrfmiddlewaretoken': ['LjY8C0J6GWcdcrOez3mY21R843ogcCKMJCpgOwicUE6jp50iMIniENxIeNa68SM1'], 'problem_id': ['497346'], 'migrate_to_azure': ['1']}
+[INFO] 2025-12-23 18:15:15,022 views | Processing polygon_id=497346
+[DEBUG] 2025-12-23 18:15:15,024 views | db_problem=Multiply two nums
+[DEBUG] 2025-12-23 18:15:24,119 views | Updated working copy: None
+[DEBUG] 2025-12-23 18:15:27,088 views | Fetched solutions: [{'name': 'solution.cpp', 'modificationTimeSeconds': 1766401304, 'length': 273, 'tag': 'MA', 'sourceType': 'cpp.g++14'}]
+[INFO] 2025-12-23 18:15:28,412 views | Azure migration triggered for polygon_id=497346
+[INFO] 2025-12-23 18:15:28,414 views | Problem found in DB, proceeding with Azure migration
+[INFO] 2025-12-23 18:15:28,414 views | Azure migration params: problem_id=1, container=polygon-migration
+[INFO] 2025-12-23 18:15:28,415 polygon_api | pattern oj_dev_with_redis_storage_test_cases_1*
+[INFO] 2025-12-23 18:15:28,416 polygon_api | Fetching custom checker info for problem 497346
+[DEBUG] 2025-12-23 18:15:32,310 polygon_api | Raw checker info: checker.cpp
+[INFO] 2025-12-23 18:15:32,310 polygon_api | Custom checker detected: {'name': 'checker.cpp', 'type': 'custom'}
+[INFO] 2025-12-23 18:15:32,311 views | Custom checker detected before Azure migration: {'name': 'checker.cpp', 'type': 'custom'}
+[INFO] 2025-12-23 18:15:32,311 views | Calling migrate_to_azure_blob
+[INFO] 2025-12-23 18:15:33,060 polygon_api | Starting migrate_to_azure_blob for problem 497346
+[INFO] 2025-12-23 18:15:33,063 polygon_api | Retrieved 13 test cases from Redis for polygon_id 497346
+[INFO] 2025-12-23 18:15:33,063 polygon_api | Retrieved test cases from Redis for Azure migration (saved Polygon API call)
+[INFO] 2025-12-23 18:15:33,063 polygon_api | Retrieved 13 test cases for Azure migration
+[INFO] 2025-12-23 18:15:33,063 AzureTestcase | Attempting to authenticate...
+[INFO] 2025-12-23 18:15:33,064 AzureTestcase | Authentication successful. BlobServiceClient created.
+[INFO] 2025-12-23 18:15:33,064 polygon_api | Using problem_id_for_naming: 1
+[INFO] 2025-12-23 18:15:33,064 polygon_api | Deleting existing test cases from Azure
+[INFO] 2025-12-23 18:15:35,297 AzureTestcase | Deleting blob: test_cases/1/01
+[INFO] 2025-12-23 18:15:35,539 AzureTestcase | Deleting blob: test_cases/1/01.a
+[INFO] 2025-12-23 18:15:35,794 AzureTestcase | Deleting blob: test_cases/1/02
+[INFO] 2025-12-23 18:15:36,049 AzureTestcase | Deleting blob: test_cases/1/02.a
+[INFO] 2025-12-23 18:15:36,310 AzureTestcase | Deleting blob: test_cases/1/03
+[INFO] 2025-12-23 18:15:36,559 AzureTestcase | Deleting blob: test_cases/1/03.a
+[INFO] 2025-12-23 18:15:36,805 AzureTestcase | Deleting blob: test_cases/1/04
+[INFO] 2025-12-23 18:15:37,105 AzureTestcase | Deleting blob: test_cases/1/04.a
+[INFO] 2025-12-23 18:15:37,426 AzureTestcase | Deleting blob: test_cases/1/05
+[INFO] 2025-12-23 18:15:37,694 AzureTestcase | Deleting blob: test_cases/1/05.a
+[INFO] 2025-12-23 18:15:37,941 AzureTestcase | Deleting blob: test_cases/1/06
+[INFO] 2025-12-23 18:15:38,225 AzureTestcase | Deleting blob: test_cases/1/06.a
+[INFO] 2025-12-23 18:15:38,469 AzureTestcase | Deleting blob: test_cases/1/07
+[INFO] 2025-12-23 18:15:38,719 AzureTestcase | Deleting blob: test_cases/1/07.a
+[INFO] 2025-12-23 18:15:39,069 AzureTestcase | Deleting blob: test_cases/1/08
+[INFO] 2025-12-23 18:15:39,477 AzureTestcase | Deleting blob: test_cases/1/08.a
+[INFO] 2025-12-23 18:15:39,880 AzureTestcase | Deleting blob: test_cases/1/09
+[INFO] 2025-12-23 18:15:40,290 AzureTestcase | Deleting blob: test_cases/1/09.a
+[INFO] 2025-12-23 18:15:40,699 AzureTestcase | Deleting blob: test_cases/1/10
+[INFO] 2025-12-23 18:15:41,005 AzureTestcase | Deleting blob: test_cases/1/10.a
+[INFO] 2025-12-23 18:15:41,313 AzureTestcase | Deleting blob: test_cases/1/11
+[INFO] 2025-12-23 18:15:41,723 AzureTestcase | Deleting blob: test_cases/1/11.a
+[INFO] 2025-12-23 18:15:42,139 AzureTestcase | Deleting blob: test_cases/1/12
+[INFO] 2025-12-23 18:15:42,549 AzureTestcase | Deleting blob: test_cases/1/12.a
+[INFO] 2025-12-23 18:15:42,936 AzureTestcase | Deleting blob: test_cases/1/13
+[INFO] 2025-12-23 18:15:43,368 AzureTestcase | Deleting blob: test_cases/1/13.a
+[INFO] 2025-12-23 18:15:43,778 AzureTestcase | Deleting blob: test_cases/1/custom_checker
+[INFO] 2025-12-23 18:15:44,018 AzureTestcase | Deleted 27 blobs for problem 1 in container polygon-migration.
+[INFO] 2025-12-23 18:15:44,386 AzureTestcase | Uploaded input for test #1 to test_cases/1/01
+[INFO] 2025-12-23 18:15:44,801 AzureTestcase | Uploaded output for test #1 to test_cases/1/01.a
+[INFO] 2025-12-23 18:15:45,211 AzureTestcase | Uploaded input for test #2 to test_cases/1/02
+[INFO] 2025-12-23 18:15:45,621 AzureTestcase | Uploaded output for test #2 to test_cases/1/02.a
+[INFO] 2025-12-23 18:15:46,023 AzureTestcase | Uploaded input for test #3 to test_cases/1/03
+[INFO] 2025-12-23 18:15:46,440 AzureTestcase | Uploaded output for test #3 to test_cases/1/03.a
+[INFO] 2025-12-23 18:15:46,843 AzureTestcase | Uploaded input for test #4 to test_cases/1/04
+[INFO] 2025-12-23 18:15:47,252 AzureTestcase | Uploaded output for test #4 to test_cases/1/04.a
+[INFO] 2025-12-23 18:15:47,662 AzureTestcase | Uploaded input for test #5 to test_cases/1/05
+[INFO] 2025-12-23 18:15:47,910 AzureTestcase | Uploaded output for test #5 to test_cases/1/05.a
+[INFO] 2025-12-23 18:15:48,283 AzureTestcase | Uploaded input for test #6 to test_cases/1/06
+[INFO] 2025-12-23 18:15:48,693 AzureTestcase | Uploaded output for test #6 to test_cases/1/06.a
+[INFO] 2025-12-23 18:15:48,969 AzureTestcase | Uploaded input for test #7 to test_cases/1/07
+[INFO] 2025-12-23 18:15:49,220 AzureTestcase | Uploaded output for test #7 to test_cases/1/07.a
+[INFO] 2025-12-23 18:15:49,481 AzureTestcase | Uploaded input for test #8 to test_cases/1/08
+[INFO] 2025-12-23 18:15:49,740 AzureTestcase | Uploaded output for test #8 to test_cases/1/08.a
+[INFO] 2025-12-23 18:15:50,065 AzureTestcase | Uploaded input for test #9 to test_cases/1/09
+[INFO] 2025-12-23 18:15:50,324 AzureTestcase | Uploaded output for test #9 to test_cases/1/09.a
+[INFO] 2025-12-23 18:15:50,565 AzureTestcase | Uploaded input for test #10 to test_cases/1/10
+[INFO] 2025-12-23 18:15:50,809 AzureTestcase | Uploaded output for test #10 to test_cases/1/10.a
+[INFO] 2025-12-23 18:15:51,059 AzureTestcase | Uploaded input for test #11 to test_cases/1/11
+[INFO] 2025-12-23 18:15:51,299 AzureTestcase | Uploaded output for test #11 to test_cases/1/11.a
+[INFO] 2025-12-23 18:15:51,559 AzureTestcase | Uploaded input for test #12 to test_cases/1/12
+[INFO] 2025-12-23 18:15:51,825 AzureTestcase | Uploaded output for test #12 to test_cases/1/12.a
+[INFO] 2025-12-23 18:15:52,080 AzureTestcase | Uploaded input for test #13 to test_cases/1/13
+[INFO] 2025-12-23 18:15:52,345 AzureTestcase | Uploaded output for test #13 to test_cases/1/13.a
+[INFO] 2025-12-23 18:15:52,345 polygon_api | Uploaded 13 test cases to Azure
+[INFO] 2025-12-23 18:15:52,345 polygon_api | Starting custom checker processing for problem 497346
+[INFO] 2025-12-23 18:15:52,345 polygon_api | Processing custom checker for problem 497346
+[INFO] 2025-12-23 18:15:52,345 polygon_api | Fetching custom checker info for problem 497346
+[DEBUG] 2025-12-23 18:15:53,396 polygon_api | Raw checker info: checker.cpp
+[INFO] 2025-12-23 18:15:53,396 polygon_api | Custom checker detected: {'name': 'checker.cpp', 'type': 'custom'}
+[INFO] 2025-12-23 18:15:53,396 polygon_api | Custom checker info retrieved: {'name': 'checker.cpp', 'type': 'custom'}
+[INFO] 2025-12-23 18:15:53,397 polygon_api | Fetching custom checker file checker.cpp via API for problem 497346
+[INFO] 2025-12-23 18:15:54,282 polygon_api | Successfully fetched custom checker file via API, content length: 632
+[INFO] 2025-12-23 18:15:54,283 polygon_api | Custom checker source code fetched successfully, length: 632
+[INFO] 2025-12-23 18:15:54,283 polygon_api | Initializing Azure Blob Manager for custom checker upload
+[INFO] 2025-12-23 18:15:54,283 AzureTestcase | Attempting to authenticate...
+[INFO] 2025-12-23 18:15:54,283 AzureTestcase | Authentication successful. BlobServiceClient created.
+[INFO] 2025-12-23 18:15:54,284 polygon_api | Created temporary directory for compilation: /tmp/tmpo_vwhukk
+[INFO] 2025-12-23 18:15:54,284 polygon_api | Compiling custom checker in /tmp/tmpo_vwhukk
+[INFO] 2025-12-23 18:15:54,284 polygon_api | Found g++ at: /usr/bin/g++
+[INFO] 2025-12-23 18:15:54,284 polygon_api | Source code written to: /tmp/tmpo_vwhukk/custom_checker.cpp
+[INFO] 2025-12-23 18:15:54,284 polygon_api | Running compilation command: g++ -std=gnu++17 -O2 -I/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/PolygonMigration/opt/checker_includes/ -o /tmp/tmpo_vwhukk/custom_checker /tmp/tmpo_vwhukk/custom_checker.cpp
+[INFO] 2025-12-23 18:16:00,591 polygon_api | Compilation completed with return code: 0
+[INFO] 2025-12-23 18:16:00,591 polygon_api | Custom checker compiled successfully
+[INFO] 2025-12-23 18:16:00,591 polygon_api | Custom checker compiled successfully at: /tmp/tmpo_vwhukk/custom_checker
+[INFO] 2025-12-23 18:16:00,591 polygon_api | Binary file read successfully, size: 314160 bytes
+[INFO] 2025-12-23 18:16:00,591 polygon_api | Uploading custom checker to blob: test_cases/1/custom_checker
+[INFO] 2025-12-23 18:16:05,043 polygon_api | Successfully uploaded custom checker to test_cases/1/custom_checker
+[INFO] 2025-12-23 18:16:05,044 polygon_api | Completed custom checker processing for problem 497346
+[INFO] 2025-12-23 18:16:05,045 polygon_api | Completed migrate_to_azure_blob for problem 497346
+[INFO] 2025-12-23 18:16:05,045 views | Azure migration completed successfully
+[INFO] 2025-12-23 18:16:05,045 polygon_api | Fetching problem info for 497346
+[INFO] 2025-12-23 18:16:07,328 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[DEBUG] 2025-12-23 18:16:07,328 views | Polygon problem info: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 18:16:07,329 polygon_api | Downloading package for problem 497346
+[INFO] 2025-12-23 18:16:07,329 polygon_api | Fetching problem info for 497346
+[INFO] 2025-12-23 18:16:08,147 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 18:16:20,449 polygon_api | Successfully read problem.html content, length: 3972 characters
+[DEBUG] 2025-12-23 18:16:20,453 polygon_api | Cleaned up temporary directory: /tmp/tmpfr01wodm
+[DEBUG] 2025-12-23 18:16:20,454 views | Downloaded and extracted problem_html_content, length: 3972
+[INFO] 2025-12-23 18:16:20,454 views | Entered parse_problem_html with content length=3972
+[DEBUG] 2025-12-23 18:16:20,455 views | Extracted title=Multiply two nums, legend length=61, input_format length=548, output_format length=124
+[INFO] 2025-12-23 18:16:20,456 views | Exiting parse_problem_html
+[DEBUG] 2025-12-23 18:16:20,456 views | Parsed html_data: {'title': 'Multiply two nums', 'legend': '<p>Given two numbers multiply them and return the answer.</p>', 'input_format': '<p>The first line will contain the number of test cases <span class="tex-font-style-bf"><span class="tex-font-style-it">t</span></span>: 1 &lt;= t &lt;= 10. The next t lines will contain two integers <span class="tex-font-style-bf"><span class="tex-font-style-it">n</span></span> and <span class="tex-font-style-bf"><span class="tex-font-style-it">m</span></span>: 0 &lt;= <span class="tex-font-style-bf"><span class="tex-font-style-it">n</span></span>,<span class="tex-font-style-bf"><span class="tex-font-style-it">m</span></span> &lt;= 1000.</p>', 'output_format': '<p>Print t lines — one line for each test case. For each test case, print a single integer — product of the two numbers.</p>', 'notes': ''}
+[INFO] 2025-12-23 18:16:20,457 polygon_api | Retrieved 13 test cases from Redis for polygon_id 497346
+[INFO] 2025-12-23 18:16:20,457 views | Retrieved test cases from Redis for test case migration to DB (saved Polygon API call)
+[DEBUG] 2025-12-23 18:16:21,749 views | checker_type=checker.cpp
+[INFO] 2025-12-23 18:16:21,749 polygon_api | Fetching custom checker info for problem 497346
+[DEBUG] 2025-12-23 18:16:23,097 polygon_api | Raw checker info: checker.cpp
+[INFO] 2025-12-23 18:16:23,097 polygon_api | Custom checker detected: {'name': 'checker.cpp', 'type': 'custom'}
+[INFO] 2025-12-23 18:16:23,097 polygon_api | Fetching test cases for 497346, testset
+[DEBUG] 2025-12-23 18:16:23,952 views | test_case_count=13
+[INFO] 2025-12-23 18:16:23,953 views | Exiting index view
+[INFO] 2025-12-23 20:22:12,329 views | Entered index view with method=POST
+[DEBUG] 2025-12-23 20:22:12,333 views | POST data: polygon_id=497346, migrate_to_azure=None, migrate_to_db=None, migrate_test_cases_to_db=None, difficulty=, selected_tags=[], new_tag=
+[DEBUG] 2025-12-23 20:22:12,334 views | All POST data: {'csrfmiddlewaretoken': ['96HKLe66wrRzgIfVPAAYR2Hqq6Qs6vAq7p8SXKFcK9LFtmrZ2fBitOn0AQCi2LCF'], 'problem_id': ['497346']}
+[INFO] 2025-12-23 20:22:12,334 views | Processing polygon_id=497346
+[DEBUG] 2025-12-23 20:22:12,338 views | db_problem=Multiply two nums
+[DEBUG] 2025-12-23 20:22:19,919 views | Updated working copy: None
+[DEBUG] 2025-12-23 20:22:29,556 views | Fetched solutions: [{'name': 'solution.cpp', 'modificationTimeSeconds': 1766401304, 'length': 273, 'tag': 'MA', 'sourceType': 'cpp.g++14'}]
+[INFO] 2025-12-23 20:22:38,344 polygon_api | Fetching problem info for 497346
+[INFO] 2025-12-23 20:22:47,693 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[DEBUG] 2025-12-23 20:22:47,693 views | Polygon problem info: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 20:22:47,693 polygon_api | Downloading package for problem 497346
+[INFO] 2025-12-23 20:22:47,694 polygon_api | Fetching problem info for 497346
+[INFO] 2025-12-23 20:22:57,112 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 20:23:18,246 polygon_api | Successfully read problem.html content, length: 3972 characters
+[DEBUG] 2025-12-23 20:23:18,248 polygon_api | Cleaned up temporary directory: /tmp/tmp19e79ada
+[DEBUG] 2025-12-23 20:23:18,249 views | Downloaded and extracted problem_html_content, length: 3972
+[INFO] 2025-12-23 20:23:18,249 views | Entered parse_problem_html with content length=3972
+[DEBUG] 2025-12-23 20:23:18,249 views | Extracted title=Multiply two nums, legend length=61, input_format length=548, output_format length=124
+[INFO] 2025-12-23 20:23:18,249 views | Exiting parse_problem_html
+[DEBUG] 2025-12-23 20:23:18,250 views | Parsed html_data: {'title': 'Multiply two nums', 'legend': '<p>Given two numbers multiply them and return the answer.</p>', 'input_format': '<p>The first line will contain the number of test cases <span class="tex-font-style-bf"><span class="tex-font-style-it">t</span></span>: 1 &lt;= t &lt;= 10. The next t lines will contain two integers <span class="tex-font-style-bf"><span class="tex-font-style-it">n</span></span> and <span class="tex-font-style-bf"><span class="tex-font-style-it">m</span></span>: 0 &lt;= <span class="tex-font-style-bf"><span class="tex-font-style-it">n</span></span>,<span class="tex-font-style-bf"><span class="tex-font-style-it">m</span></span> &lt;= 1000.</p>', 'output_format': '<p>Print t lines — one line for each test case. For each test case, print a single integer — product of the two numbers.</p>', 'notes': ''}
+[INFO] 2025-12-23 20:23:18,250 polygon_api | Fetching all test cases for 497346, testset
+[INFO] 2025-12-23 20:23:27,935 polygon_api | Found 10 test cases to process
+[INFO] 2025-12-23 20:23:27,935 polygon_api | Processing test case 1/10 (index: 4)
+[DEBUG] 2025-12-23 20:23:27,935 polygon_api | Fetching input for test case 4
+[DEBUG] 2025-12-23 20:23:37,151 polygon_api | Fetching output for test case 4
+[INFO] 2025-12-23 20:23:46,878 polygon_api | Successfully fetched test case 4 - Input length: 73, Output length: 48
+[INFO] 2025-12-23 20:23:46,879 polygon_api | Processing test case 2/10 (index: 5)
+[DEBUG] 2025-12-23 20:23:46,879 polygon_api | Fetching input for test case 5
+[DEBUG] 2025-12-23 20:23:56,607 polygon_api | Fetching output for test case 5
+[INFO] 2025-12-23 20:24:05,735 polygon_api | Successfully fetched test case 5 - Input length: 52, Output length: 34
+[INFO] 2025-12-23 20:24:05,736 polygon_api | Processing test case 3/10 (index: 6)
+[DEBUG] 2025-12-23 20:24:05,736 polygon_api | Fetching input for test case 6
+[DEBUG] 2025-12-23 20:24:15,339 polygon_api | Fetching output for test case 6
+[INFO] 2025-12-23 20:24:25,073 polygon_api | Successfully fetched test case 6 - Input length: 76, Output length: 60
+[INFO] 2025-12-23 20:24:25,073 polygon_api | Processing test case 4/10 (index: 7)
+[DEBUG] 2025-12-23 20:24:25,073 polygon_api | Fetching input for test case 7
+[DEBUG] 2025-12-23 20:24:34,898 polygon_api | Fetching output for test case 7
+[INFO] 2025-12-23 20:24:44,734 polygon_api | Successfully fetched test case 7 - Input length: 51, Output length: 33
+[INFO] 2025-12-23 20:24:44,734 polygon_api | Processing test case 5/10 (index: 8)
+[DEBUG] 2025-12-23 20:24:44,734 polygon_api | Fetching input for test case 8
+[DEBUG] 2025-12-23 20:24:54,155 polygon_api | Fetching output for test case 8
+[INFO] 2025-12-23 20:25:03,064 polygon_api | Successfully fetched test case 8 - Input length: 20, Output length: 14
+[INFO] 2025-12-23 20:25:03,064 polygon_api | Processing test case 6/10 (index: 9)
+[DEBUG] 2025-12-23 20:25:03,064 polygon_api | Fetching input for test case 9
+[DEBUG] 2025-12-23 20:25:12,172 polygon_api | Fetching output for test case 9
+[INFO] 2025-12-23 20:25:21,804 polygon_api | Successfully fetched test case 9 - Input length: 45, Output length: 34
+[INFO] 2025-12-23 20:25:21,804 polygon_api | Processing test case 7/10 (index: 10)
+[DEBUG] 2025-12-23 20:25:21,804 polygon_api | Fetching input for test case 10
+[DEBUG] 2025-12-23 20:25:31,428 polygon_api | Fetching output for test case 10
+[INFO] 2025-12-23 20:25:40,542 polygon_api | Successfully fetched test case 10 - Input length: 35, Output length: 18
+[INFO] 2025-12-23 20:25:40,542 polygon_api | Processing test case 8/10 (index: 11)
+[DEBUG] 2025-12-23 20:25:40,542 polygon_api | Fetching input for test case 11
+[DEBUG] 2025-12-23 20:25:52,834 polygon_api | Fetching output for test case 11
+[INFO] 2025-12-23 20:26:02,658 polygon_api | Successfully fetched test case 11 - Input length: 56, Output length: 38
+[INFO] 2025-12-23 20:26:02,658 polygon_api | Processing test case 9/10 (index: 12)
+[DEBUG] 2025-12-23 20:26:02,658 polygon_api | Fetching input for test case 12
+[DEBUG] 2025-12-23 20:26:11,868 polygon_api | Fetching output for test case 12
+[INFO] 2025-12-23 20:26:30,716 polygon_api | Successfully fetched test case 12 - Input length: 32, Output length: 19
+[INFO] 2025-12-23 20:26:30,716 polygon_api | Processing test case 10/10 (index: 13)
+[DEBUG] 2025-12-23 20:26:30,716 polygon_api | Fetching input for test case 13
+[DEBUG] 2025-12-23 20:26:40,035 polygon_api | Fetching output for test case 13
+[INFO] 2025-12-23 20:26:49,149 polygon_api | Successfully fetched test case 13 - Input length: 18, Output length: 11
+[INFO] 2025-12-23 20:26:49,149 polygon_api | Completed fetching all 10 test cases for problem 497346
+[DEBUG] 2025-12-23 20:26:49,149 views | Fetched all test cases.
+[DEBUG] 2025-12-23 20:26:49,149 polygon_api | connecting to redis at address 127.0.0.1:6379 with password: 
+[INFO] 2025-12-23 20:26:49,152 polygon_api | Stored 10 test cases in Redis for polygon_id 497346
+[DEBUG] 2025-12-23 20:26:58,878 views | checker_type=checker.cpp
+[INFO] 2025-12-23 20:26:58,878 polygon_api | Fetching custom checker info for problem 497346
+[DEBUG] 2025-12-23 20:27:08,086 polygon_api | Raw checker info: checker.cpp
+[INFO] 2025-12-23 20:27:08,086 polygon_api | Custom checker detected: {'name': 'checker.cpp', 'type': 'custom'}
+[INFO] 2025-12-23 20:27:08,086 polygon_api | Fetching test cases for 497346, testset
+[DEBUG] 2025-12-23 20:27:17,312 views | test_case_count=10
+[INFO] 2025-12-23 20:27:17,312 views | Exiting index view
+[INFO] 2025-12-23 20:37:08,549 views | Entered index view with method=POST
+[DEBUG] 2025-12-23 20:37:08,550 views | POST data: polygon_id=497694, migrate_to_azure=None, migrate_to_db=None, migrate_test_cases_to_db=None, difficulty=, selected_tags=[], new_tag=
+[DEBUG] 2025-12-23 20:37:08,550 views | All POST data: {'csrfmiddlewaretoken': ['3KpVM9M5U1g8hfgCNrvIQIZA15poSq1e13Q3YFlb8JaeuTsG06w2suFabPbeOG3t'], 'problem_id': ['497694']}
+[INFO] 2025-12-23 20:37:08,550 views | Processing polygon_id=497694
+[DEBUG] 2025-12-23 20:37:08,551 views | db_problem=None
+[INFO] 2025-12-23 20:37:08,551 polygon_api | Fetching problem info for 497694
+[INFO] 2025-12-23 20:37:18,317 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[DEBUG] 2025-12-23 20:37:18,317 views | Polygon problem info: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 20:37:18,317 polygon_api | Downloading package for problem 497694
+[INFO] 2025-12-23 20:37:18,318 polygon_api | Fetching problem info for 497694
+[INFO] 2025-12-23 20:37:27,541 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 20:37:48,748 polygon_api | Successfully read problem.html content, length: 1518 characters
+[DEBUG] 2025-12-23 20:37:48,751 polygon_api | Cleaned up temporary directory: /tmp/tmpshm5lee7
+[DEBUG] 2025-12-23 20:37:48,751 views | Downloaded and extracted problem_html_content, length: 1518
+[INFO] 2025-12-23 20:37:48,751 views | Entered parse_problem_html with content length=1518
+[DEBUG] 2025-12-23 20:37:48,752 views | Extracted title=Multiply two nums, legend length=24, input_format length=14, output_format length=21
+[INFO] 2025-12-23 20:37:48,752 views | Exiting parse_problem_html
+[DEBUG] 2025-12-23 20:37:48,752 views | Parsed html_data: {'title': 'Multiply two nums', 'legend': '<p>Multiply two nums</p>', 'input_format': '<p>n and m</p>', 'output_format': '<p>single integer</p>', 'notes': ''}
+[INFO] 2025-12-23 20:37:48,752 polygon_api | Fetching all test cases for 497694, testset
+[INFO] 2025-12-23 20:37:58,319 polygon_api | Found 15 test cases to process
+[INFO] 2025-12-23 20:37:58,319 polygon_api | Processing test case 1/15 (index: 1)
+[DEBUG] 2025-12-23 20:37:58,320 polygon_api | Fetching input for test case 1
+[DEBUG] 2025-12-23 20:38:08,084 polygon_api | Fetching output for test case 1
+[INFO] 2025-12-23 20:38:17,300 polygon_api | Successfully fetched test case 1 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 20:38:17,300 polygon_api | Processing test case 2/15 (index: 2)
+[DEBUG] 2025-12-23 20:38:17,300 polygon_api | Fetching input for test case 2
+[DEBUG] 2025-12-23 20:38:27,233 polygon_api | Fetching output for test case 2
+[INFO] 2025-12-23 20:38:35,630 polygon_api | Successfully fetched test case 2 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 20:38:35,630 polygon_api | Processing test case 3/15 (index: 3)
+[DEBUG] 2025-12-23 20:38:35,630 polygon_api | Fetching input for test case 3
+[DEBUG] 2025-12-23 20:38:44,953 polygon_api | Fetching output for test case 3
+[INFO] 2025-12-23 20:38:53,959 polygon_api | Successfully fetched test case 3 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 20:38:53,959 polygon_api | Processing test case 4/15 (index: 4)
+[DEBUG] 2025-12-23 20:38:53,959 polygon_api | Fetching input for test case 4
+[DEBUG] 2025-12-23 20:39:03,688 polygon_api | Fetching output for test case 4
+[INFO] 2025-12-23 20:39:13,417 polygon_api | Successfully fetched test case 4 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 20:39:13,417 polygon_api | Processing test case 5/15 (index: 5)
+[DEBUG] 2025-12-23 20:39:13,417 polygon_api | Fetching input for test case 5
+[DEBUG] 2025-12-23 20:39:22,632 polygon_api | Fetching output for test case 5
+[INFO] 2025-12-23 20:39:32,251 polygon_api | Successfully fetched test case 5 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 20:39:32,251 polygon_api | Processing test case 6/15 (index: 6)
+[DEBUG] 2025-12-23 20:39:32,251 polygon_api | Fetching input for test case 6
+[DEBUG] 2025-12-23 20:39:41,987 polygon_api | Fetching output for test case 6
+[INFO] 2025-12-23 20:39:51,203 polygon_api | Successfully fetched test case 6 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 20:39:51,203 polygon_api | Processing test case 7/15 (index: 7)
+[DEBUG] 2025-12-23 20:39:51,203 polygon_api | Fetching input for test case 7
+[DEBUG] 2025-12-23 20:40:00,418 polygon_api | Fetching output for test case 7
+[INFO] 2025-12-23 20:40:09,441 polygon_api | Successfully fetched test case 7 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 20:40:09,441 polygon_api | Processing test case 8/15 (index: 8)
+[DEBUG] 2025-12-23 20:40:09,441 polygon_api | Fetching input for test case 8
+[DEBUG] 2025-12-23 20:40:19,055 polygon_api | Fetching output for test case 8
+[INFO] 2025-12-23 20:40:28,784 polygon_api | Successfully fetched test case 8 - Input length: 9, Output length: 4
+[INFO] 2025-12-23 20:40:28,784 polygon_api | Processing test case 9/15 (index: 9)
+[DEBUG] 2025-12-23 20:40:28,784 polygon_api | Fetching input for test case 9
+[DEBUG] 2025-12-23 20:40:38,000 polygon_api | Fetching output for test case 9
+[INFO] 2025-12-23 20:40:47,120 polygon_api | Successfully fetched test case 9 - Input length: 10, Output length: 5
+[INFO] 2025-12-23 20:40:47,120 polygon_api | Processing test case 10/15 (index: 10)
+[DEBUG] 2025-12-23 20:40:47,120 polygon_api | Fetching input for test case 10
+[DEBUG] 2025-12-23 20:40:56,252 polygon_api | Fetching output for test case 10
+[INFO] 2025-12-23 20:41:05,956 polygon_api | Successfully fetched test case 10 - Input length: 10, Output length: 5
+[INFO] 2025-12-23 20:41:05,956 polygon_api | Processing test case 11/15 (index: 11)
+[DEBUG] 2025-12-23 20:41:05,957 polygon_api | Fetching input for test case 11
+[DEBUG] 2025-12-23 20:41:15,684 polygon_api | Fetching output for test case 11
+[INFO] 2025-12-23 20:41:25,412 polygon_api | Successfully fetched test case 11 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 20:41:25,412 polygon_api | Processing test case 12/15 (index: 12)
+[DEBUG] 2025-12-23 20:41:25,412 polygon_api | Fetching input for test case 12
+[DEBUG] 2025-12-23 20:41:34,623 polygon_api | Fetching output for test case 12
+[INFO] 2025-12-23 20:41:44,048 polygon_api | Successfully fetched test case 12 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 20:41:44,048 polygon_api | Processing test case 13/15 (index: 13)
+[DEBUG] 2025-12-23 20:41:44,050 polygon_api | Fetching input for test case 13
+[DEBUG] 2025-12-23 20:41:53,368 polygon_api | Fetching output for test case 13
+[INFO] 2025-12-23 20:42:03,096 polygon_api | Successfully fetched test case 13 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 20:42:03,096 polygon_api | Processing test case 14/15 (index: 14)
+[DEBUG] 2025-12-23 20:42:03,096 polygon_api | Fetching input for test case 14
+[DEBUG] 2025-12-23 20:42:12,311 polygon_api | Fetching output for test case 14
+[INFO] 2025-12-23 20:42:21,528 polygon_api | Successfully fetched test case 14 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 20:42:21,528 polygon_api | Processing test case 15/15 (index: 15)
+[DEBUG] 2025-12-23 20:42:21,529 polygon_api | Fetching input for test case 15
+[DEBUG] 2025-12-23 20:42:31,153 polygon_api | Fetching output for test case 15
+[INFO] 2025-12-23 20:42:40,605 polygon_api | Successfully fetched test case 15 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 20:42:40,605 polygon_api | Completed fetching all 15 test cases for problem 497694
+[DEBUG] 2025-12-23 20:42:40,605 views | Fetched all test cases.
+[DEBUG] 2025-12-23 20:42:40,605 polygon_api | connecting to redis at address 127.0.0.1:6379 with password: 
+[INFO] 2025-12-23 20:42:40,611 polygon_api | Stored 15 test cases in Redis for polygon_id 497694
+[DEBUG] 2025-12-23 20:42:49,977 views | checker_type=checker.cpp
+[INFO] 2025-12-23 20:42:49,977 polygon_api | Fetching custom checker info for problem 497694
+[DEBUG] 2025-12-23 20:42:59,416 polygon_api | Raw checker info: checker.cpp
+[INFO] 2025-12-23 20:42:59,416 polygon_api | Custom checker detected: {'name': 'checker.cpp', 'type': 'custom'}
+[INFO] 2025-12-23 20:42:59,417 polygon_api | Fetching test cases for 497694, testset
+[DEBUG] 2025-12-23 20:43:08,942 views | test_case_count=15
+[INFO] 2025-12-23 20:43:08,942 views | Exiting index view
+[INFO] 2025-12-23 21:35:29,666 views | Entered index view with method=POST
+[DEBUG] 2025-12-23 21:35:29,667 views | POST data: polygon_id=497694, migrate_to_azure=None, migrate_to_db=1, migrate_test_cases_to_db=None, difficulty=easy, selected_tags=[], new_tag=
+[DEBUG] 2025-12-23 21:35:29,667 views | All POST data: {'csrfmiddlewaretoken': ['ny1TbwQugc43fIpNkZBh40izE8aWCQdylRs1n2pAuUY9smBRxECBGMY9OSWMy6fN'], 'problem_id': ['497694'], 'migrate_to_db': ['1'], 'difficulty': ['easy']}
+[INFO] 2025-12-23 21:35:29,667 views | Processing polygon_id=497694
+[DEBUG] 2025-12-23 21:35:29,668 views | db_problem=None
+[INFO] 2025-12-23 21:35:29,669 polygon_api | Fetching problem info for 497694
+[INFO] 2025-12-23 21:35:37,206 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[DEBUG] 2025-12-23 21:35:37,206 views | Polygon problem info: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 21:35:37,206 polygon_api | Downloading package for problem 497694
+[INFO] 2025-12-23 21:35:37,207 polygon_api | Fetching problem info for 497694
+[INFO] 2025-12-23 21:35:49,085 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 21:36:10,227 polygon_api | Successfully read problem.html content, length: 1518 characters
+[DEBUG] 2025-12-23 21:36:10,229 polygon_api | Cleaned up temporary directory: /tmp/tmpq_5j92_c
+[DEBUG] 2025-12-23 21:36:10,230 views | Downloaded and extracted problem_html_content, length: 1518
+[INFO] 2025-12-23 21:36:10,230 views | Entered parse_problem_html with content length=1518
+[DEBUG] 2025-12-23 21:36:10,230 views | Extracted title=Multiply two nums, legend length=24, input_format length=14, output_format length=21
+[INFO] 2025-12-23 21:36:10,230 views | Exiting parse_problem_html
+[DEBUG] 2025-12-23 21:36:10,230 views | Parsed html_data: {'title': 'Multiply two nums', 'legend': '<p>Multiply two nums</p>', 'input_format': '<p>n and m</p>', 'output_format': '<p>single integer</p>', 'notes': ''}
+[INFO] 2025-12-23 21:36:10,231 polygon_api | No test cases found in Redis for polygon_id 497694
+[WARNING] 2025-12-23 21:36:10,231 views | Test cases not found in Redis, fetching from Polygon
+[INFO] 2025-12-23 21:36:10,231 polygon_api | Fetching all test cases for 497694, testset
+[INFO] 2025-12-23 21:36:17,039 polygon_api | Found 15 test cases to process
+[INFO] 2025-12-23 21:36:17,040 polygon_api | Processing test case 1/15 (index: 1)
+[DEBUG] 2025-12-23 21:36:17,040 polygon_api | Fetching input for test case 1
+[DEBUG] 2025-12-23 21:36:26,767 polygon_api | Fetching output for test case 1
+[INFO] 2025-12-23 21:36:35,879 polygon_api | Successfully fetched test case 1 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 21:36:35,879 polygon_api | Processing test case 2/15 (index: 2)
+[DEBUG] 2025-12-23 21:36:35,880 polygon_api | Fetching input for test case 2
+[DEBUG] 2025-12-23 21:36:45,507 polygon_api | Fetching output for test case 2
+[INFO] 2025-12-23 21:36:55,132 polygon_api | Successfully fetched test case 2 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 21:36:55,132 polygon_api | Processing test case 3/15 (index: 3)
+[DEBUG] 2025-12-23 21:36:55,132 polygon_api | Fetching input for test case 3
+[DEBUG] 2025-12-23 21:37:05,160 polygon_api | Fetching output for test case 3
+[INFO] 2025-12-23 21:37:13,972 polygon_api | Successfully fetched test case 3 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 21:37:13,972 polygon_api | Processing test case 4/15 (index: 4)
+[DEBUG] 2025-12-23 21:37:13,972 polygon_api | Fetching input for test case 4
+[DEBUG] 2025-12-23 21:37:23,701 polygon_api | Fetching output for test case 4
+[INFO] 2025-12-23 21:37:33,429 polygon_api | Successfully fetched test case 4 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 21:37:33,429 polygon_api | Processing test case 5/15 (index: 5)
+[DEBUG] 2025-12-23 21:37:33,429 polygon_api | Fetching input for test case 5
+[DEBUG] 2025-12-23 21:37:43,157 polygon_api | Fetching output for test case 5
+[INFO] 2025-12-23 21:37:52,885 polygon_api | Successfully fetched test case 5 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 21:37:52,885 polygon_api | Processing test case 6/15 (index: 6)
+[DEBUG] 2025-12-23 21:37:52,885 polygon_api | Fetching input for test case 6
+[DEBUG] 2025-12-23 21:38:02,511 polygon_api | Fetching output for test case 6
+[INFO] 2025-12-23 21:38:11,624 polygon_api | Successfully fetched test case 6 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 21:38:11,624 polygon_api | Processing test case 7/15 (index: 7)
+[DEBUG] 2025-12-23 21:38:11,624 polygon_api | Fetching input for test case 7
+[DEBUG] 2025-12-23 21:38:21,353 polygon_api | Fetching output for test case 7
+[INFO] 2025-12-23 21:38:30,984 polygon_api | Successfully fetched test case 7 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 21:38:30,984 polygon_api | Processing test case 8/15 (index: 8)
+[DEBUG] 2025-12-23 21:38:30,984 polygon_api | Fetching input for test case 8
+[DEBUG] 2025-12-23 21:38:40,706 polygon_api | Fetching output for test case 8
+[INFO] 2025-12-23 21:38:50,536 polygon_api | Successfully fetched test case 8 - Input length: 9, Output length: 4
+[INFO] 2025-12-23 21:38:50,536 polygon_api | Processing test case 9/15 (index: 9)
+[DEBUG] 2025-12-23 21:38:50,536 polygon_api | Fetching input for test case 9
+[DEBUG] 2025-12-23 21:38:59,751 polygon_api | Fetching output for test case 9
+[INFO] 2025-12-23 21:39:08,950 polygon_api | Successfully fetched test case 9 - Input length: 10, Output length: 5
+[INFO] 2025-12-23 21:39:08,950 polygon_api | Processing test case 10/15 (index: 10)
+[DEBUG] 2025-12-23 21:39:08,950 polygon_api | Fetching input for test case 10
+[DEBUG] 2025-12-23 21:39:18,593 polygon_api | Fetching output for test case 10
+[INFO] 2025-12-23 21:39:27,912 polygon_api | Successfully fetched test case 10 - Input length: 10, Output length: 5
+[INFO] 2025-12-23 21:39:27,912 polygon_api | Processing test case 11/15 (index: 11)
+[DEBUG] 2025-12-23 21:39:27,912 polygon_api | Fetching input for test case 11
+[DEBUG] 2025-12-23 21:39:37,639 polygon_api | Fetching output for test case 11
+[INFO] 2025-12-23 21:39:47,265 polygon_api | Successfully fetched test case 11 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 21:39:47,265 polygon_api | Processing test case 12/15 (index: 12)
+[DEBUG] 2025-12-23 21:39:47,265 polygon_api | Fetching input for test case 12
+[DEBUG] 2025-12-23 21:39:59,246 polygon_api | Fetching output for test case 12
+[INFO] 2025-12-23 21:40:06,414 polygon_api | Successfully fetched test case 12 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 21:40:06,414 polygon_api | Processing test case 13/15 (index: 13)
+[DEBUG] 2025-12-23 21:40:06,414 polygon_api | Fetching input for test case 13
+[DEBUG] 2025-12-23 21:40:15,220 polygon_api | Fetching output for test case 13
+[INFO] 2025-12-23 21:40:24,846 polygon_api | Successfully fetched test case 13 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 21:40:24,846 polygon_api | Processing test case 14/15 (index: 14)
+[DEBUG] 2025-12-23 21:40:24,846 polygon_api | Fetching input for test case 14
+[DEBUG] 2025-12-23 21:40:34,479 polygon_api | Fetching output for test case 14
+[INFO] 2025-12-23 21:40:43,790 polygon_api | Successfully fetched test case 14 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 21:40:43,790 polygon_api | Processing test case 15/15 (index: 15)
+[DEBUG] 2025-12-23 21:40:43,790 polygon_api | Fetching input for test case 15
+[DEBUG] 2025-12-23 21:40:56,078 polygon_api | Fetching output for test case 15
+[INFO] 2025-12-23 21:41:05,294 polygon_api | Successfully fetched test case 15 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 21:41:05,294 polygon_api | Completed fetching all 15 test cases for problem 497694
+[DEBUG] 2025-12-23 21:41:05,294 polygon_api | connecting to redis at address 127.0.0.1:6379 with password: 
+[INFO] 2025-12-23 21:41:05,300 polygon_api | Stored 15 test cases in Redis for polygon_id 497694
+[DEBUG] 2025-12-23 21:41:14,965 views | checker_type=checker.cpp
+[INFO] 2025-12-23 21:41:14,965 polygon_api | Fetching custom checker info for problem 497694
+[DEBUG] 2025-12-23 21:41:24,033 polygon_api | Raw checker info: checker.cpp
+[INFO] 2025-12-23 21:41:24,033 polygon_api | Custom checker detected: {'name': 'checker.cpp', 'type': 'custom'}
+[INFO] 2025-12-23 21:41:24,033 polygon_api | Fetching test cases for 497694, testset
+[DEBUG] 2025-12-23 21:41:33,965 views | test_case_count=15
+[INFO] 2025-12-23 21:41:33,966 views | Starting DB migration for polygon_id=497694
+[INFO] 2025-12-23 21:41:33,968 views | Creating new Problem in DB
+[ERROR] 2025-12-23 21:41:33,972 views | Exception in index view: duplicate key value violates unique constraint "problems_problem_slug_key"
+DETAIL:  Key (slug)=(multiply-two-nums) already exists.
+Traceback (most recent call last):
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "problems_problem_slug_key"
+DETAIL:  Key (slug)=(multiply-two-nums) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/PolygonMigration/problems/views.py", line 380, in index
+    problem_obj = Problem.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/base.py", line 902, in save
+    self.save_base(
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "problems_problem_slug_key"
+DETAIL:  Key (slug)=(multiply-two-nums) already exists.
+
+[INFO] 2025-12-23 22:20:07,186 views | Entered index view with method=POST
+[DEBUG] 2025-12-23 22:20:07,187 views | POST data: polygon_id=497694, migrate_to_azure=None, migrate_to_db=1, migrate_test_cases_to_db=None, difficulty=easy, selected_tags=[], new_tag=
+[DEBUG] 2025-12-23 22:20:07,187 views | All POST data: {'csrfmiddlewaretoken': ['ny1TbwQugc43fIpNkZBh40izE8aWCQdylRs1n2pAuUY9smBRxECBGMY9OSWMy6fN'], 'problem_id': ['497694'], 'migrate_to_db': ['1'], 'difficulty': ['easy']}
+[INFO] 2025-12-23 22:20:07,187 views | Processing polygon_id=497694
+[DEBUG] 2025-12-23 22:20:07,189 views | db_problem=None
+[INFO] 2025-12-23 22:20:07,189 polygon_api | Fetching problem info for 497694
+[INFO] 2025-12-23 22:20:17,110 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[DEBUG] 2025-12-23 22:20:17,110 views | Polygon problem info: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 22:20:17,111 polygon_api | Downloading package for problem 497694
+[INFO] 2025-12-23 22:20:17,111 polygon_api | Fetching problem info for 497694
+[INFO] 2025-12-23 22:20:26,736 polygon_api | Polygon problem.info response: {'timeLimit': 1000, 'inputFile': 'stdin', 'outputFile': 'stdout', 'interactive': False, 'memoryLimit': 256}
+[INFO] 2025-12-23 22:20:50,548 polygon_api | Successfully read problem.html content, length: 1518 characters
+[DEBUG] 2025-12-23 22:20:50,551 polygon_api | Cleaned up temporary directory: /tmp/tmpar9b2h6c
+[DEBUG] 2025-12-23 22:20:50,551 views | Downloaded and extracted problem_html_content, length: 1518
+[INFO] 2025-12-23 22:20:50,551 views | Entered parse_problem_html with content length=1518
+[DEBUG] 2025-12-23 22:20:50,552 views | Extracted title=Multiply two nums, legend length=24, input_format length=14, output_format length=21
+[INFO] 2025-12-23 22:20:50,552 views | Exiting parse_problem_html
+[DEBUG] 2025-12-23 22:20:50,552 views | Parsed html_data: {'title': 'Multiply two nums', 'legend': '<p>Multiply two nums</p>', 'input_format': '<p>n and m</p>', 'output_format': '<p>single integer</p>', 'notes': ''}
+[INFO] 2025-12-23 22:20:50,552 polygon_api | No test cases found in Redis for polygon_id 497694
+[WARNING] 2025-12-23 22:20:50,553 views | Test cases not found in Redis, fetching from Polygon
+[INFO] 2025-12-23 22:20:50,553 polygon_api | Fetching all test cases for 497694, testset
+[INFO] 2025-12-23 22:20:57,456 polygon_api | Found 15 test cases to process
+[INFO] 2025-12-23 22:20:57,456 polygon_api | Processing test case 1/15 (index: 1)
+[DEBUG] 2025-12-23 22:20:57,456 polygon_api | Fetching input for test case 1
+[DEBUG] 2025-12-23 22:21:07,183 polygon_api | Fetching output for test case 1
+[INFO] 2025-12-23 22:21:16,808 polygon_api | Successfully fetched test case 1 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 22:21:16,808 polygon_api | Processing test case 2/15 (index: 2)
+[DEBUG] 2025-12-23 22:21:16,808 polygon_api | Fetching input for test case 2
+[DEBUG] 2025-12-23 22:21:26,434 polygon_api | Fetching output for test case 2
+[INFO] 2025-12-23 22:21:36,060 polygon_api | Successfully fetched test case 2 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 22:21:36,060 polygon_api | Processing test case 3/15 (index: 3)
+[DEBUG] 2025-12-23 22:21:36,060 polygon_api | Fetching input for test case 3
+[DEBUG] 2025-12-23 22:21:45,174 polygon_api | Fetching output for test case 3
+[INFO] 2025-12-23 22:21:54,798 polygon_api | Successfully fetched test case 3 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 22:21:54,798 polygon_api | Processing test case 4/15 (index: 4)
+[DEBUG] 2025-12-23 22:21:54,799 polygon_api | Fetching input for test case 4
+[DEBUG] 2025-12-23 22:22:04,009 polygon_api | Fetching output for test case 4
+[INFO] 2025-12-23 22:22:13,333 polygon_api | Successfully fetched test case 4 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 22:22:13,333 polygon_api | Processing test case 5/15 (index: 5)
+[DEBUG] 2025-12-23 22:22:13,333 polygon_api | Fetching input for test case 5
+[DEBUG] 2025-12-23 22:22:22,448 polygon_api | Fetching output for test case 5
+[INFO] 2025-12-23 22:22:32,082 polygon_api | Successfully fetched test case 5 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 22:22:32,082 polygon_api | Processing test case 6/15 (index: 6)
+[DEBUG] 2025-12-23 22:22:32,082 polygon_api | Fetching input for test case 6
+[DEBUG] 2025-12-23 22:22:41,903 polygon_api | Fetching output for test case 6
+[INFO] 2025-12-23 22:22:50,965 polygon_api | Successfully fetched test case 6 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 22:22:50,965 polygon_api | Processing test case 7/15 (index: 7)
+[DEBUG] 2025-12-23 22:22:50,965 polygon_api | Fetching input for test case 7
+[DEBUG] 2025-12-23 22:23:00,540 polygon_api | Fetching output for test case 7
+[INFO] 2025-12-23 22:23:09,859 polygon_api | Successfully fetched test case 7 - Input length: 8, Output length: 4
+[INFO] 2025-12-23 22:23:09,859 polygon_api | Processing test case 8/15 (index: 8)
+[DEBUG] 2025-12-23 22:23:09,859 polygon_api | Fetching input for test case 8
+[DEBUG] 2025-12-23 22:23:19,068 polygon_api | Fetching output for test case 8
+[INFO] 2025-12-23 22:23:28,188 polygon_api | Successfully fetched test case 8 - Input length: 9, Output length: 4
+[INFO] 2025-12-23 22:23:28,188 polygon_api | Processing test case 9/15 (index: 9)
+[DEBUG] 2025-12-23 22:23:28,188 polygon_api | Fetching input for test case 9
+[DEBUG] 2025-12-23 22:23:37,404 polygon_api | Fetching output for test case 9
+[INFO] 2025-12-23 22:23:47,132 polygon_api | Successfully fetched test case 9 - Input length: 10, Output length: 5
+[INFO] 2025-12-23 22:23:47,132 polygon_api | Processing test case 10/15 (index: 10)
+[DEBUG] 2025-12-23 22:23:47,132 polygon_api | Fetching input for test case 10
+[DEBUG] 2025-12-23 22:23:56,861 polygon_api | Fetching output for test case 10
+[INFO] 2025-12-23 22:24:06,588 polygon_api | Successfully fetched test case 10 - Input length: 10, Output length: 5
+[INFO] 2025-12-23 22:24:06,588 polygon_api | Processing test case 11/15 (index: 11)
+[DEBUG] 2025-12-23 22:24:06,588 polygon_api | Fetching input for test case 11
+[DEBUG] 2025-12-23 22:24:15,711 polygon_api | Fetching output for test case 11
+[INFO] 2025-12-23 22:24:25,429 polygon_api | Successfully fetched test case 11 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 22:24:25,429 polygon_api | Processing test case 12/15 (index: 12)
+[DEBUG] 2025-12-23 22:24:25,429 polygon_api | Fetching input for test case 12
+[DEBUG] 2025-12-23 22:24:34,441 polygon_api | Fetching output for test case 12
+[INFO] 2025-12-23 22:24:44,069 polygon_api | Successfully fetched test case 12 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 22:24:44,069 polygon_api | Processing test case 13/15 (index: 13)
+[DEBUG] 2025-12-23 22:24:44,069 polygon_api | Fetching input for test case 13
+[DEBUG] 2025-12-23 22:24:53,692 polygon_api | Fetching output for test case 13
+[INFO] 2025-12-23 22:25:02,933 polygon_api | Successfully fetched test case 13 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 22:25:02,933 polygon_api | Processing test case 14/15 (index: 14)
+[DEBUG] 2025-12-23 22:25:02,933 polygon_api | Fetching input for test case 14
+[DEBUG] 2025-12-23 22:25:12,227 polygon_api | Fetching output for test case 14
+[INFO] 2025-12-23 22:25:21,340 polygon_api | Successfully fetched test case 14 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 22:25:21,340 polygon_api | Processing test case 15/15 (index: 15)
+[DEBUG] 2025-12-23 22:25:21,340 polygon_api | Fetching input for test case 15
+[DEBUG] 2025-12-23 22:25:30,964 polygon_api | Fetching output for test case 15
+[INFO] 2025-12-23 22:25:40,080 polygon_api | Successfully fetched test case 15 - Input length: 8, Output length: 3
+[INFO] 2025-12-23 22:25:40,080 polygon_api | Completed fetching all 15 test cases for problem 497694
+[DEBUG] 2025-12-23 22:25:40,080 polygon_api | connecting to redis at address 127.0.0.1:6379 with password: 
+[INFO] 2025-12-23 22:25:40,083 polygon_api | Stored 15 test cases in Redis for polygon_id 497694
+[DEBUG] 2025-12-23 22:25:49,294 views | checker_type=checker.cpp
+[INFO] 2025-12-23 22:25:49,295 polygon_api | Fetching custom checker info for problem 497694
+[DEBUG] 2025-12-23 22:25:58,448 polygon_api | Raw checker info: checker.cpp
+[INFO] 2025-12-23 22:25:58,448 polygon_api | Custom checker detected: {'name': 'checker.cpp', 'type': 'custom'}
+[INFO] 2025-12-23 22:25:58,448 polygon_api | Fetching test cases for 497694, testset
+[DEBUG] 2025-12-23 22:26:07,728 views | test_case_count=15
+[INFO] 2025-12-23 22:26:07,728 views | Starting DB migration for polygon_id=497694
+[INFO] 2025-12-23 22:26:07,730 views | Creating new Problem in DB
+[ERROR] 2025-12-23 22:26:07,733 views | Exception in index view: duplicate key value violates unique constraint "problems_problem_slug_key"
+DETAIL:  Key (slug)=(multiply-two-nums) already exists.
+Traceback (most recent call last):
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "problems_problem_slug_key"
+DETAIL:  Key (slug)=(multiply-two-nums) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/PolygonMigration/problems/views.py", line 380, in index
+    problem_obj = Problem.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/base.py", line 902, in save
+    self.save_base(
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/vaik/Polygon-migration-assignment/Polygon-migration-assignment/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "problems_problem_slug_key"
+DETAIL:  Key (slug)=(multiply-two-nums) already exists.
+

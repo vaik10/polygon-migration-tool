@@ -21,8 +21,7 @@ class AzureBlobManager:
             account_url (str): The URL of the Azure Storage Account.
             tenant_id (str): The Azure Active Directory Tenant ID.
             client_id (str): The Client ID of an AAD application.
-            username (str): The user's email/login name.
-            password (str): The user's password.
+            client_secret (str): The Client Secret of the AAD application.
 
         Raises:
             ClientAuthenticationError: If authentication fails.
