@@ -1,4 +1,5 @@
 import os
+from .storage_interface import StorageManager
 from azure.identity import UsernamePasswordCredential
 from azure.identity import ClientSecretCredential
 from azure.storage.blob import BlobServiceClient
@@ -7,7 +8,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-class AzureBlobManager:
+
+class AzureBlobManager(StorageManager):
     """
     A manager class to handle read/write operations for Azure Blob Storage using user credentials.
 
