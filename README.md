@@ -69,8 +69,7 @@ POLYGON_API_SECRET=your_polygon_api_secret
 AZURE_STORAGE_ACCOUNT_URL=https://<your-storage-account>.blob.core.windows.net/
 AZURE_TENANT_ID=your-tenant-id
 AZURE_CLIENT_ID=your-client-id
-AZURE_USERNAME=your-azure-username
-AZURE_PASSWORD=your-azure-password
+AZURE_CLIENT_SECRET=your-client-secret
 AZURE_CONTAINER_NAME=your-container-name
 
 # Redis (optional, for caching)
@@ -154,8 +153,7 @@ Access the app at [http://localhost:8000/](http://localhost:8000/)
 | AZURE_STORAGE_ACCOUNT_URL | Azure Blob Storage account URL              |
 | AZURE_TENANT_ID           | Azure AD tenant ID                          |
 | AZURE_CLIENT_ID           | Azure AD application client ID              |
-| AZURE_USERNAME            | Azure username                              |
-| AZURE_PASSWORD            | Azure password                              |
+| AZURE_CLIENT_SECRET       | Azure Client Secret Key                     |
 | AZURE_CONTAINER_NAME      | Azure Blob container name                   |
 | REDIS_HOST                | Redis host (optional)                       |
 | REDIS_PORT                | Redis port (optional)                       |
