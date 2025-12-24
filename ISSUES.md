@@ -6,8 +6,8 @@ This file was generated from `ISSUES_TEMPLATE.md` and contains issues discovered
 
 | Type | Critical | High | Medium | Low | Total |
 |------|----------|------|--------|-----|-------|
-| Product Issues | 0 | 2 | 0 | 1 | 3 |
-| Code Issues | 1 | 1 | 3 | 3 | 8 |
+| Product Issues | 0 | 2 | 0 | 3 | 5 |
+| Code Issues | 1 | 2 | 3 | 3 | 9 |
 
 ---
 
@@ -69,6 +69,47 @@ One of the form buttons in the migration UI has a label that does not accurately
 
 ---
 
+
+### [P4] HTML tags in UI
+
+**Severity**: Low
+
+**Location**: `problems/templates/problems/index.html` (approx line 205)
+
+**Description**:
+The "Problem Statement", "Input Format", and "Output Format" sections are displaying raw HTML tags instead of rendered markup. The HTML content fetched from Polygon appears to be escaped or otherwise not being rendered by the template.
+
+**Impact**:
+
+**Impact**:
+- Poor readability and confusing presentation for problem statements; important formatting (code blocks, <pre>, lists, tables, images) may not appear correctly.
+
+**Suggested Fix**:
+- Render trusted HTML in the template instead of escaping it. If the Polygon content is trusted in your deployment, you can safely render it using Django's `|safe` template filter (e.g. `{{ problem.statement_html|safe }}`).
+- Add tests that verify rendering and sanitization behavior, and document the chosen approach in the UI docs to make security trade-offs explicit.
+
+---
+
+### [P5] Inaccurate success message for "Migrate Test Cases to DB"
+
+**Severity**: Low
+
+**Location**: `problems/views.py` (approx line 562)
+
+**Description**:
+The success message shown after migrating test cases reads "Test cases description migrated to database Successfully." The message is grammatically awkward and misleading — it suggests that only descriptions were migrated rather than the actual test inputs/outputs. It also lacks contextual information such as how many test cases were migrated or whether any failed.
+
+**Impact**:
+- Confusion for operators and site users; undermines confidence in the migration workflow.
+- Makes troubleshooting harder when partial failures occur (no counts or error details are shown).
+
+**Suggested Fix**:
+- Replace the message with a clear, grammatical, and informative message. Examples:
+    - `Migrated 12 test cases to the database successfully.`
+    - `Test cases migration completed: 12 succeeded, 0 failed.`
+
+---
+
 ## Code Issues
 
 ### [C1] Missing / Out-of-sync migrations causing Runtime DB errors
@@ -109,7 +150,32 @@ The code stores test cases using the prefix `polygon_migration_test_cases_{polyg
 - Add unit tests asserting caching keys are created and removed.
 ---
 
-### [C3] Missing timeouts and retry logic on HTTP calls
+### [C3] Lack of unit tests and inadequate test coverage
+
+**Severity**: High
+
+**Location**: Repository root and multiple modules (e.g., `problems/`, `users/`, `contents/`).
+
+**Description**:
+The repository lacks a comprehensive automated test suite. Critical modules that interact with external services (Polygon API wrapper, Azure blob manager, and the migration views) have little to no unit tests. There are no standardized mocks/fixtures for external network I/O, and CI is not configured to run tests with mocks.
+
+**Impact**:
+- Regressions can be introduced silently and only discovered at runtime.
+- Refactoring core components (Polygon client extraction, storage backend swap) is risky without tests.
+- Deployments may break integration points (signature generation, blob uploads) without automated verification.
+
+**Suggested Fix**:
+- Adopt `pytest` and `pytest-django` as the test runner and framework.
+- Add unit tests covering:
+    - `problems/polygon_api.py`: signature generation, request parameter ordering, and parsing logic (use `responses` or `requests-mock`).
+    - `problems/AzureTestcase.py`: blob upload/delete behaviour using `unittest.mock` to stub Azure SDK.
+    - `problems/views.py`: migrate view flows using Django `RequestFactory` and mocks for external services; test DB changes and rollback behaviors.
+- Add test fixtures for sample Polygon responses and a sample package zip to ensure deterministic tests.
+- Integrate tests into CI (GitHub Actions) and enforce a minimum coverage threshold (e.g., 80%).
+
+---
+
+### [C4] Missing timeouts and retry logic on HTTP calls
 
 **Severity**: Medium
 
@@ -123,7 +189,7 @@ The code makes network requests to Polygon (and in other places) without specify
 **Suggested Fix**:
 
 ---
-### [C4] Dynamic imports and `sys.path.append('.')` usage
+### [C5] Dynamic imports and `sys.path.append('.')` usage
 
 **Severity**: Medium
 
@@ -141,7 +207,7 @@ The code appends `.` to `sys.path` and imports `AzureTestcase` inside functions.
 - Remove `sys.path.append('.')` and fix PYTHONPATH via proper packaging or Django settings.
 ---
 
-### [C5] Broad exception handling and inconsistent error propagation
+### [C6] Broad exception handling and inconsistent error propagation
 
 **Severity**: Medium
 
@@ -159,7 +225,7 @@ The code often catches generic `Exception` and returns empty defaults or swallow
 
 ---
 
-### [C6] Hard-coded two-digit zero padding for test blob names
+### [C7] Hard-coded two-digit zero padding for test blob names
 
 **Severity**: Low
 
@@ -176,7 +242,7 @@ Two-digit zero padding (`02d`) will cause naming collisions or inconsistent orde
 
 ---
 
-### [C7] Unused imports and minor code quality issues
+### [C8] Unused imports and minor code quality issues
 
 **Severity**: Low
 
@@ -193,7 +259,7 @@ There are a few imports that are unused; also some logging messages and comments
 
 ---
 
-### [C8] Non-standard requirements file name
+### [C9] Non-standard requirements file name
 
 **Severity**: Low
 
@@ -269,3 +335,9 @@ When test cases are saved to DB the code truncates input/output to 260 chars (se
 - Store full testcases either in DB (if acceptable) or store only references/paths to blobs in Azure and keep previews in DB. Make truncation configurable and documented.
 
 ---
+
+## Blockers
+
+- While trying to migrate test cases to Azure I faced error in the empty_blob functionality which could not let me create, delete or update because of the authentication method used. Authentication by username and password does not allow these operations for a personal(MCA) account in azure. So I had to switch to authenticating by client secret.
+
+- When trying to migrate data to DB I had to run an extra command not mentioned in the DB to grant privileges to my user to create/update data in DB - GRANT USAGE, CREATE ON SCHEMA public TO your_db_user;
